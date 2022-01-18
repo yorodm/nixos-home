@@ -49,7 +49,6 @@ in {
     #(callPackage ./termius.nix { })
     remmina
 
-
     # DEFAULT
     pavucontrol
     # wineWowPackages.stable

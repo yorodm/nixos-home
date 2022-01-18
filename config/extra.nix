@@ -16,10 +16,16 @@
     xidlehook = {
       enable = true;
       not-when-fullscreen = true;
-      timers = [{
-        delay = 60 * 15;
-        command = "${pkgs.i3lock}/bin/i3lock -n -c 000000";
-      }];
+      timers = [
+        {
+          delay = 60 * 15;
+          command = "${pkgs.i3lock}/bin/i3lock -n -c 000000";
+        }
+        {
+          delay = 60 * 60;
+          command = "systemctl suspend";
+        }
+      ];
 
     };
     emacs = {
