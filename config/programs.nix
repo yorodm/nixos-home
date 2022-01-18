@@ -12,6 +12,7 @@
       enable = true;
       shellAliases = {
         nix-installed = "nix-instantiate --strict --json --eval -E 'builtins.map (p: p.name) (import <nixpkgs/nixos> {}).config.environment.systemPackages' | nix run nixpkgs.jq -c jq -r '.[]' | sort -u";
+        git-dated = "git commit -m \"Updated: `date +'%Y-%m-%d %H:%M:%S'`\"";
       };
       oh-my-zsh = {
         enable = true;
