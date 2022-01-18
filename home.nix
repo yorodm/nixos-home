@@ -9,10 +9,10 @@
   # Load overlays
   nixpkgs.overlays = [
     (import (builtins.fetchTarball {
-      url = https://github.com/nix-community/emacs-overlay/archive/master.tar.gz;
+      url = https://github.com/nix-community/emacs-overlay/archive/46c8425e72efd4002343df959ba1ce47381e1eca.tar.gz;
     }))
   ];
-  imports = [ ./config/main.nix ./packages/main.nix];
+  imports = [ ./cachix.nix ./config/main.nix ./packages/main.nix];
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage

@@ -40,7 +40,7 @@ in {
     aria2
     imagemagick
     feh
-
+    ranger
     # DEVELOPMENT
     nixfmt
     default-python
