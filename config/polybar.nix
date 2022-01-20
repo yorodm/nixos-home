@@ -7,6 +7,8 @@
       alsaSupport = true;
       iwSupport = true;
       githubSupport = true;
+      mpdSupport = true;
+      pulseSupport = true;
     };
     config = ./files/polybar.conf;
     script = lib.mkDefault ''

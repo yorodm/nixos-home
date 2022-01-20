@@ -19,7 +19,7 @@ in {
 
     # UI
     kotatogram-desktop
-    rofi-power-menu
+    brightnessctl
     # Special
     lm_sensors
     # MISC
