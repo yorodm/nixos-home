@@ -10,6 +10,7 @@
 
     zsh = {
       enable = true;
+      enableCompletion = true;
       shellAliases = {
         nix-installed = "nix-instantiate --strict --json --eval -E 'builtins.map (p: p.name) (import <nixpkgs/nixos> {}).config.environment.systemPackages' | nix run nixpkgs.jq -c jq -r '.[]' | sort -u";
         git-dated = "git commit -m \"Updated: `date +'%Y-%m-%d %H:%M:%S'`\"";
@@ -27,6 +28,10 @@
       enable = true;
       package = pkgs.emacsPgtkGcc;
       extraPackages = (epkgs: [ epkgs.vterm ] );
+    };
+    nnn = {
+      enable = true;
+      package = pkgs.nnn.override ({ withNerdIcons = true; });
     };
   };
 }

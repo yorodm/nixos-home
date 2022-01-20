@@ -19,11 +19,11 @@ in {
 
     # UI
     kotatogram-desktop
+    rofi-power-menu
     # Special
     lm_sensors
     # MISC
     haskellPackages.network-manager-tui
-
     # TERMINAL
     ripgrep
     any-nix-shell
@@ -40,15 +40,12 @@ in {
     aria2
     imagemagick
     feh
-    ranger
     # DEVELOPMENT
     nixfmt
     default-python
-
     # SYSADMIN
     #(callPackage ./termius.nix { })
     remmina
-
     # DEFAULT
     pavucontrol
     # wineWowPackages.stable

@@ -42,7 +42,7 @@
 
         sort = true;
 
-        font = "Roboto 10";
+        font = "Iosevka Nerd Font 10";
         line_height = 5;
         format = "<b>%s</b>\n%b";
         markup = "full";
@@ -57,7 +57,7 @@
         max_icon_size = 80;
 
         startup_notification = false;
-
+         dmenu = "${pkgs.rofi}/bin/rofi -dmenu -p dunst -theme glue_pro_blue";
         browser = "${pkgs.firefox} -new-tab";
       };
 

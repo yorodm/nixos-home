@@ -7,9 +7,9 @@
     ./i3.nix
     ./polybar.nix
     ./redshift.nix
-    ./rofi.nix
     ./extra.nix
     ./programs.nix
+    ./dunst.nix
   ];
 
   programs = {
