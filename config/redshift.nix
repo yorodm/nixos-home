@@ -2,17 +2,21 @@
 
 {
   # create ~/.config/systemd/user/default.target.wants/redshift.service to enable
-  services.redshift = {
+services.gammastep = {
     enable = true;
-    settings.redshift = {
-      brightness-day = "1";
-      brightness-night = "1";
-    };
+    tray = true;
+    dawnTime = "6:30-7:30";
+    duskTime = "18:30-19:30";
+    package = pkgs.gammastep;
     temperature = {
-      day = 5500;
-      night = 4000;
+      day = 5700;
+      night = 3700;
     };
-    latitude = "85.0";
-    longitude = "2.35";
+    settings = {
+      general = {
+        gamma = 0.9;
+        fade = 1;
+      };
+    };
   };
 }

@@ -1,4 +1,4 @@
-{config, pkgs, ...}:
+{ config, pkgs, ... }:
 
 {
   programs = {
@@ -7,27 +7,29 @@
       userName = "Yoandy Rodriguez";
       userEmail = "yoandy.rmartinez" + "@" + "gmail.com";
     };
-
+    rofi = {
+      enable = true;
+      theme = "default";
+    };
     zsh = {
       enable = true;
       enableCompletion = true;
       shellAliases = {
-        nix-installed = "nix-instantiate --strict --json --eval -E 'builtins.map (p: p.name) (import <nixpkgs/nixos> {}).config.environment.systemPackages' | nix run nixpkgs.jq -c jq -r '.[]' | sort -u";
-        git-dated = "git commit -m \"Updated: `date +'%Y-%m-%d %H:%M:%S'`\"";
+        nix-installed =
+          "nix-instantiate --strict --json --eval -E 'builtins.map (p: p.name) (import <nixpkgs/nixos> {}).config.environment.systemPackages' | nix run nixpkgs.jq -c jq -r '.[]' | sort -u";
+        git-dated = ''git commit -m "Updated: `date +'%Y-%m-%d %H:%M:%S'`"'';
       };
       oh-my-zsh = {
         enable = true;
-        plugins = [ "git" "rust" "ssh-agent" "themes"];
+        plugins = [ "git" "rust" "ssh-agent" "themes" "systemd"];
         theme = "robbyrussell";
       };
     };
-    firefox = {
-      enable = true;
-    };
+    firefox = { enable = true; };
     emacs = {
       enable = true;
       package = pkgs.emacsPgtkGcc;
-      extraPackages = (epkgs: [ epkgs.vterm ] );
+      extraPackages = (epkgs: [ epkgs.vterm ]);
     };
     nnn = {
       enable = true;

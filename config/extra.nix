@@ -17,9 +17,7 @@ in {
     #   };
     #   inactiveInterval = 5;
     # };
-    poweralertd = {
-      enable = true;
-    };
+    poweralertd = { enable = true; };
     xidlehook = {
       enable = true;
       not-when-fullscreen = true;
