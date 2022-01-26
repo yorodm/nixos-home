@@ -1,17 +1,11 @@
 { config, pkgs, lib, ... }:
 
-
 {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "jadex";
   home.homeDirectory = "/home/jadex";
   # Load overlays
-  nixpkgs.overlays = [
-    (import (builtins.fetchTarball {
-      url = https://github.com/nix-community/emacs-overlay/archive/46c8425e72efd4002343df959ba1ce47381e1eca.tar.gz;
-    }))
-  ];
   imports = [ ./cachix.nix ./config/main.nix ./packages/main.nix];
 
   # This value determines the Home Manager release that your

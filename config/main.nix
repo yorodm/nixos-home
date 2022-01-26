@@ -18,4 +18,5 @@
   };
 
   xsession.enable = true;
+  systemd.user.startServices = true;
 }
