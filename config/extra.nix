@@ -23,9 +23,9 @@ in {
 
     };
     flameshot = { enable = true; };
-  };
-  udiskie = {
+    udiskie = {
     enable = true;
+  };
   };
   xdg = {
     userDirs = {
