@@ -23,7 +23,7 @@ in {
     # Special
     lm_sensors
     # MISC
-    haskellPackages.network-manager-tui
+    mc
     # TERMINAL
     ripgrep
     any-nix-shell
