@@ -10,6 +10,7 @@
     ./extra.nix
     ./programs.nix
     ./dunst.nix
+    ./emacs.nix
   ];
 
   programs = {

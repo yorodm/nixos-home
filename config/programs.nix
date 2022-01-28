@@ -1,16 +1,6 @@
 { config, pkgs, ... }:
 
-let
-    unstable = import (fetchTarball
-    "https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz") {
-      overlays = [
-        (import (builtins.fetchTarball {
-          url = https://github.com/nix-community/emacs-overlay/archive/master.tar.gz;
-        }))
-      ];
-    };
-
-in {
+{
   programs = {
     git = {
       enable = true;
@@ -36,16 +26,14 @@ in {
       };
     };
     firefox = { enable = true; };
-    emacs = {
-      enable = true;
-      package = unstable.emacsPgtkGcc;
-  #    extraPackages = (epkgs: [ epkgs.vterm ]);
-    };
     nnn = {
       enable = true;
       package = pkgs.nnn.override ({ withNerdIcons = true; });
     };
     password-store = {
+      enable = true;
+    };
+    mpv = {
       enable = true;
     };
   };

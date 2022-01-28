@@ -4,14 +4,6 @@ let
   battery = "BAT0";
   notifyCapacity = 40;
   suspendCapacity = 15;
-  unstable = import (fetchTarball
-    "https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz") {
-      overlays = [
-        (import (builtins.fetchTarball {
-          url = https://github.com/nix-community/emacs-overlay/archive/master.tar.gz;
-        }))
-      ];
-    };
 in {
   services = {
     poweralertd = { enable = true; };
@@ -29,10 +21,6 @@ in {
         }
       ];
 
-    };
-    emacs = {
-      enable = true;
-      package = unstable.emacsPgtkGcc;
     };
     flameshot = { enable = true; };
   };

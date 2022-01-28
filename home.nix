@@ -5,7 +5,8 @@
   # paths it should manage.
   home.username = "jadex";
   home.homeDirectory = "/home/jadex";
-  # Load overlays
+
+  # imports
   imports = [ ./cachix.nix ./config/main.nix ./packages/main.nix];
 
   # This value determines the Home Manager release that your
