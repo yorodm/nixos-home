@@ -8,6 +8,6 @@
     in import "${declCachix}/home-manager.nix")
   ];
 
-  caches.cachix = [ "nix-community" "mjlbach"];
+  caches.cachix = [ "nix-community"];
 
 }

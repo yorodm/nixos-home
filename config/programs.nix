@@ -36,5 +36,8 @@
     mpv = {
       enable = true;
     };
+    rofi.pass = {
+      enable = true;
+    };
   };
 }

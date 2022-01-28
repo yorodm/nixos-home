@@ -29,6 +29,7 @@
         "${modifier}+Shift+d" = "exec ${pkgs.rofi}/bin/rofi -show window";
         # "${modifier}+b" = "exec ${pkgs.brave}/bin/brave";
         "${modifier}+Shift+x" = "exec systemctl suspend";
+        "${modifier}+Shift+p" = "exec --no-startup-id ${pkgs.rofi-pass}/bin/rofi-pass";
       };
 
       startup = [
