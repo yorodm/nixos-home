@@ -22,7 +22,6 @@ in {
       ];
 
     };
-    flameshot = { enable = true; };
     udiskie = {
     enable = true;
   };

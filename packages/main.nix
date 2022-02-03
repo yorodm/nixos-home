@@ -49,6 +49,9 @@ in {
     # DEFAULT
     pavucontrol
     # wineWowPackages.stable
+    # overlay
+    rofi-scripts
+    st
   ];
 
 }

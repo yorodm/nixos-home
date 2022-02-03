@@ -11,6 +11,7 @@
     ./programs.nix
     ./dunst.nix
     ./emacs.nix
+    ./xresources.nix
   ];
 
   programs = {

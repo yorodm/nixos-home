@@ -10,6 +10,7 @@
     rofi = {
       enable = true;
       theme = "default";
+      terminal = "${pkgs.st}/bin/st -e ${pkgs.zsh}/bin/zsh";
     };
     zsh = {
       enable = true;

@@ -24,11 +24,11 @@
         "XF86MonBrightnessUp" = "exec brightnessctl set 4%+";
         "XF86KbdBrightnessDown" = "exec brightnessctl set 4%-";
         "XF86KbdBrightnessUp" = "exec brightnessctl set 4%+";
-        "${modifier}+Return" = "exec ${pkgs.alacritty}/bin/alacritty";
+        "${modifier}+Return" = "exec ${pkgs.st}/bin/st -e ${pkgs.zsh}/bin/zsh";
         "${modifier}+d" = "exec ${pkgs.rofi}/bin/rofi -modi drun -show drun";
         "${modifier}+Shift+d" = "exec ${pkgs.rofi}/bin/rofi -show window";
         # "${modifier}+b" = "exec ${pkgs.brave}/bin/brave";
-        "${modifier}+Shift+x" = "exec systemctl suspend";
+        "${modifier}+Shift+x" = "exec ${pkgs.rofi-scripts}/bin/rofi-power";
         "${modifier}+Shift+p" = "exec --no-startup-id ${pkgs.rofi-pass}/bin/rofi-pass";
       };
 
