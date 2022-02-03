@@ -21,4 +21,12 @@
 
   xsession.enable = true;
   systemd.user.startServices = true;
+    home.keyboard = {
+
+    layout = "us, us";
+    variant = ", intl";
+    options = [
+      "grp:alt_shift_toggle" # toggle variants with alt+shift
+    ];
+  };
 }

@@ -51,7 +51,7 @@ in {
     # wineWowPackages.stable
     # overlay
     rofi-scripts
-    st
+    xst
   ];
 
 }
