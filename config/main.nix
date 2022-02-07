@@ -1,4 +1,4 @@
-{config, pkgs, lib, ...}:
+{ config, pkgs, lib, ... }:
 
 {
   imports = [
@@ -20,9 +20,14 @@
   };
 
   xsession.enable = true;
+  xsession.pointerCursor = {
+    name = "Vanilla-DMZ";
+    package = pkgs.vanilla-dmz;
+    size = 26;
+  };
+  nixpkgs.config.zathura.useMupdf = true;
   systemd.user.startServices = true;
-    home.keyboard = {
-
+  home.keyboard = {
     layout = "us, us";
     variant = ", intl";
     options = [

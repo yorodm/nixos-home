@@ -9,7 +9,7 @@
     };
     rofi = {
       enable = true;
-      theme = "default";
+      theme = "Paper";
       terminal = "${pkgs.xst}/bin/xst -e ${pkgs.zsh}/bin/zsh";
     };
     zsh = {
@@ -19,6 +19,7 @@
         nix-installed =
           "nix-instantiate --strict --json --eval -E 'builtins.map (p: p.name) (import <nixpkgs/nixos> {}).config.environment.systemPackages' | nix run nixpkgs.jq -c jq -r '.[]' | sort -u";
         git-dated = ''git commit -m "Updated: `date +'%Y-%m-%d %H:%M:%S'`"'';
+        nix-upgrade = "sudo nixos-rebuild switch --upgrade";
       };
       oh-my-zsh = {
         enable = true;
@@ -38,6 +39,10 @@
       enable = true;
     };
     rofi.pass = {
+      enable = true;
+    };
+    # In main.nix theres an entry for the engine to use
+    zathura = {
       enable = true;
     };
   };
