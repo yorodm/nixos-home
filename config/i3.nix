@@ -1,5 +1,8 @@
-{ pkgs, lib, ... }:
+{ config, pkgs, lib, ... }:
 
+let
+  emacsclient = "${config.programs.emacs.finalPackage}/bin/emacsclient -c";
+in
 {
   xsession.windowManager.i3 = {
     enable = true;
@@ -17,7 +20,7 @@
       };
 
       keybindings = lib.mkOptionDefault {
-        "XF86AudioMute" = "exec amixer set Master toggle";
+        "XF86AudioMute" = "exec amixer set Master toggle # Volume up";
         "XF86AudioLowerVolume" = "exec amixer set Master 4%-";
         "XF86AudioRaiseVolume" = "exec amixer set Master 4%+";
         "XF86MonBrightnessDown" = "exec brightnessctl set 4%-";
@@ -27,9 +30,10 @@
         "${modifier}+Return" = "exec ${pkgs.xst}/bin/xst -e ${pkgs.zsh}/bin/zsh";
         "${modifier}+d" = "exec ${pkgs.rofi}/bin/rofi -modi drun -show drun";
         "${modifier}+Shift+d" = "exec ${pkgs.rofi}/bin/rofi -show window";
-        # "${modifier}+b" = "exec ${pkgs.brave}/bin/brave";
         "${modifier}+Shift+x" = "exec ${pkgs.rofi-scripts}/bin/rofi-power";
         "${modifier}+Shift+p" = "exec --no-startup-id ${pkgs.rofi-pass}/bin/rofi-pass";
+        "${modifier}+Shift+f" = "exec ${pkgs.xst}/bin/xst -e ${pkgs.nnn}/bin/nnn";
+        "${modifier}+Shift+e" = "exec ${emacsclient}";
       };
 
       startup = [

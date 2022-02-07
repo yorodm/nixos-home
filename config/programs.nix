@@ -28,12 +28,15 @@
       };
     };
     firefox = { enable = true; };
-    # nnn = {
-    #   enable = true;
-    #   package = pkgs.nnn.override ({ withNerdIcons = true; });
-    # };
+    nnn = {
+      enable = true;
+      package = pkgs.nnn.override ({ withNerdIcons = true; });
+    };
     password-store = {
       enable = true;
+      settings = {
+        PASSWORD_STORE_DIR ="$HOME/.password-store";
+      };
     };
     mpv = {
       enable = true;

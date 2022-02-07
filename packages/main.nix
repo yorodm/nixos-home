@@ -20,6 +20,8 @@ in {
     # UI
     kotatogram-desktop
     brightnessctl
+    x2goclient
+    xorg.xhost
     # Special
     lm_sensors
     # MISC

@@ -31,7 +31,7 @@
     layout = "us, us";
     variant = ", intl";
     options = [
-      "grp:alt_shift_toggle" # toggle variants with alt+shift
+      "grp:shift_caps_toggle" # toggle variants with alt+shift
     ];
   };
 }
