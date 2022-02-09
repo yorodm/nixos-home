@@ -7,7 +7,7 @@
   home.homeDirectory = "/home/jadex";
 
   # imports
-  imports = [ ./overlay/main.nix ./cachix.nix ./config/main.nix ./packages/main.nix];
+  imports = [ ./overlay/main.nix ./cachix.nix ./base/main.nix ];
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;

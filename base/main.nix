@@ -12,6 +12,7 @@
     ./dunst.nix
     ./emacs.nix
     ./xresources.nix
+    ./extraPrograms.nix
   ];
 
   programs = {
