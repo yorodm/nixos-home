@@ -24,8 +24,6 @@ in {
     xorg.xhost
     # Special
     lm_sensors
-    # MISC
-    mc
     # TERMINAL
     ripgrep
     any-nix-shell
