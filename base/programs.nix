@@ -12,6 +12,10 @@
       theme = "Paper";
       terminal = "${pkgs.xst}/bin/xst -e ${pkgs.zsh}/bin/zsh";
     };
+    direnv = {
+      enable = true;
+      enableZshIntegration = true;
+    };
     zsh = {
       enable = true;
       enableCompletion = true;

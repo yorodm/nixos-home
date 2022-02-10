@@ -6,6 +6,7 @@ let
   suspendCapacity = 15;
 in {
   services = {
+    lorri = { enable = true; };
     poweralertd = { enable = true; };
     xidlehook = {
       enable = true;
@@ -22,9 +23,7 @@ in {
       ];
 
     };
-    udiskie = {
-    enable = true;
-  };
+    udiskie = { enable = true; };
   };
   xdg = {
     userDirs = {
