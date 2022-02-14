@@ -13,12 +13,19 @@ let
       flake8
       virtualenv
     ]);
+  unstable = import (pkgs.fetchFromGitHub {
+    owner = "NixOS";
+    repo = "nixpkgs";
+    rev = "48d63e924a2666baf37f4f14a18f19347fbd54a2";
+    sha256 = "0dcxc4yc2y5z08pmkmjws4ir0r2cbc5mha2a48bn0bk7nxc6wx8g";
+    fetchSubmodules = true;
+  }) { };
 
 in {
   home.packages = with pkgs; [
 
     # UI
-    kotatogram-desktop
+    unstable.pkgs.tdesktop
     brightnessctl
     x2goclient
     xorg.xhost
