@@ -4,7 +4,7 @@
 
   xresources.properties = {
     #"st.font" = "Iosevka:pixelsize=14:antialias=true:autohint=true";
-    "st.font" = "Monospace-12:antialias=true:autohint=true";
+    "st.font" = "Fira Code Nerd Font Mono:size=12:antialias=true:autohint=true";
     "st.alpha" = "0.92";
     "st.alphaOffset" = "0.3";
 
