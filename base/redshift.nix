@@ -9,12 +9,13 @@ services.gammastep = {
     duskTime = "18:30-19:30";
     package = pkgs.gammastep;
     temperature = {
-      day = 5700;
+      day = 6000;
       night = 3700;
     };
     settings = {
       general = {
-        gamma = 0.9;
+        brightness-day = 1;
+        gamma-day = 1.3;
         fade = 1;
       };
     };
