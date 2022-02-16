@@ -20,6 +20,7 @@
     command-not-found.enable = true;
   };
 
+  fonts.fontconfig.enable = true;
   xsession.enable = true;
   xsession.pointerCursor = {
     name = "Vanilla-DMZ";
