@@ -29,7 +29,7 @@ in {
     brightnessctl
     x2goclient
     xorg.xhost
-    tor-browser-bundle-bin
+    bookworm
     # Special
     lm_sensors
     # MISC
