@@ -29,7 +29,6 @@ in {
     brightnessctl
     x2goclient
     xorg.xhost
-    bookworm
     # Special
     lm_sensors
     # MISC
