@@ -61,6 +61,8 @@ in {
     # overlay
     rofi-scripts
     xst
+    # Fonts
+    emacs-all-the-icons-fonts
   ];
 
 }
