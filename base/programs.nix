@@ -6,6 +6,12 @@
       enable = true;
       userName = "Yoandy Rodriguez";
       userEmail = "yoandy.rmartinez" + "@" + "gmail.com";
+      extraConfig.credential.helper = "store";
+      delta.enable = true;
+    };
+    gh = {
+      enable = true;
+      enableGitCredentialHelper = true;
     };
     rofi = {
       enable = true;

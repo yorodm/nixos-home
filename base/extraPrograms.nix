@@ -53,6 +53,8 @@ in {
     # DEVELOPMENT
     nixfmt
     default-python
+    bat
+    rnix-lsp
     # SYSADMIN
     #(callPackage ./termius.nix { })
     remmina
