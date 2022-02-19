@@ -29,6 +29,7 @@ in {
     brightnessctl
     x2goclient
     xorg.xhost
+    transmission-gtk
     # Special
     lm_sensors
     # MISC
