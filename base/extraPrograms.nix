@@ -29,6 +29,7 @@ in {
     brightnessctl
     x2goclient
     xorg.xhost
+    transmission-gtk
     # Special
     lm_sensors
     # MISC
@@ -52,6 +53,8 @@ in {
     # DEVELOPMENT
     nixfmt
     default-python
+    bat
+    rnix-lsp
     # SYSADMIN
     #(callPackage ./termius.nix { })
     remmina
