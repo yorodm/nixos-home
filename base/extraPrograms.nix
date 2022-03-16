@@ -31,6 +31,7 @@ in {
     x2goclient
     xorg.xhost
     transmission-gtk
+    ungoogled-chromium
     # Special
     lm_sensors
     # MISC
