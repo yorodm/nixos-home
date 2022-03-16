@@ -30,7 +30,8 @@ in
         "${modifier}+Return" = "exec ${pkgs.xst}/bin/xst -e ${pkgs.zsh}/bin/zsh";
         "${modifier}+d" = "exec ${pkgs.rofi}/bin/rofi -modi drun -show drun";
         "${modifier}+Shift+d" = "exec ${pkgs.rofi}/bin/rofi -show window";
-        "${modifier}+Shift+x" = "exec ${pkgs.rofi-scripts}/bin/rofi-power";
+        "${modifier}+Shift+x" = "exec ${pkgs.rofi-power}/bin/rofi-power";
+        "${modifier}+Shift+b" = "exec ${pkgs.rofi-bluetooth}/bin/rofi-bluetooth";
         "${modifier}+Shift+p" = "exec --no-startup-id ${pkgs.rofi-pass}/bin/rofi-pass";
         "${modifier}+Shift+f" = "exec ${pkgs.xst}/bin/xst -e ${pkgs.nnn}/bin/nnn";
         "${modifier}+Shift+e" = "exec ${emacsclient}";
