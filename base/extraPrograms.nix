@@ -62,7 +62,8 @@ in {
     pavucontrol
     # wineWowPackages.stable
     # overlay
-    rofi-scripts
+    rofi-power
+    rofi-bluetooth
     xst
     # Fonts
     emacs-all-the-icons-fonts
