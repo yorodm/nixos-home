@@ -6,16 +6,18 @@ let
   suspendCapacity = 15;
 in {
   services = {
-    betterlockscreen.enable = true;
     lorri = { enable = true; };
     poweralertd = { enable = true; };
     xidlehook = {
       enable = true;
       not-when-fullscreen = true;
-      not-when-audio = true;
       timers = [
         {
-          delay = 15 * 60;
+          delay = 60 * 15;
+          command = "${pkgs.betterlockscreen}/bin/betterlockscreen --lock";
+        }
+        {
+          delay = 60 * 60;
           command = "systemctl suspend";
         }
       ];

@@ -30,7 +30,6 @@ in {
     x2goclient
     xorg.xhost
     transmission-gtk
-    lutris
     # Special
     lm_sensors
     # MISC
