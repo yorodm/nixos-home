@@ -29,6 +29,9 @@
   };
   nixpkgs.config.zathura.useMupdf = true;
   systemd.user.startServices = true;
+  home.sessionVariables = {
+    SSH_ASKPASS = "";
+  };
   home.keyboard = {
     layout = "us, us";
     variant = ", intl";
