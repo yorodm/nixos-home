@@ -30,6 +30,8 @@ in {
     x2goclient
     xorg.xhost
     transmission-gtk
+    lutris
+    brave
     # Special
     lm_sensors
     # MISC
@@ -67,6 +69,7 @@ in {
     xst
     # Fonts
     emacs-all-the-icons-fonts
+    powertop
   ];
 
 }

@@ -17,7 +17,7 @@ in {
           command = "${pkgs.betterlockscreen}/bin/betterlockscreen --lock";
         }
         {
-          delay = 60 * 60;
+          delay = 60 * 30;
           command = "systemctl suspend";
         }
       ];
