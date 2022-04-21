@@ -32,15 +32,17 @@ in {
     xorg.xhost
     transmission-gtk
     ungoogled-chromium
+    gcc
+    gdb
+    gnumake
     # Special
     lm_sensors
     # MISC
-    mc
+    protonvpn-cli
     # TERMINAL
     ripgrep
     any-nix-shell
-    gotop
-    htop
+    bpytop
     neofetch
     cava
     zip
