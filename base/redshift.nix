@@ -10,7 +10,7 @@ services.gammastep = {
     package = pkgs.gammastep;
     temperature = {
       day = 5700;
-      night = 3700;
+      night = 4000;
     };
     settings = {
       general = {

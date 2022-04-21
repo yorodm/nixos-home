@@ -31,11 +31,10 @@ in {
     xorg.xhost
     transmission-gtk
     lutris
-    brave
+    ungoogled-chromium
     # Special
     lm_sensors
-    # MISC
-    mc
+    wgcf
     # TERMINAL
     ripgrep
     any-nix-shell
@@ -57,6 +56,7 @@ in {
     default-python
     bat
     rnix-lsp
+    niv
     # SYSADMIN
     #(callPackage ./termius.nix { })
     remmina
@@ -69,7 +69,6 @@ in {
     xst
     # Fonts
     emacs-all-the-icons-fonts
-    powertop
   ];
 
 }
