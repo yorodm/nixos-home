@@ -34,7 +34,6 @@ in {
     ungoogled-chromium
     # Special
     lm_sensors
-    wgcf
     # TERMINAL
     ripgrep
     any-nix-shell
