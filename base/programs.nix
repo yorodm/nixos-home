@@ -15,7 +15,11 @@
     };
     rofi = {
       enable = true;
-      theme = "Paper";
+      theme = ./files/theme.rasi;
+      extraConfig = {
+        show-icons = true;
+        hide-scrollbar = true;
+      };
       terminal = "${pkgs.xst}/bin/xst -e ${pkgs.zsh}/bin/zsh";
     };
     direnv = {

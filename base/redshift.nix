@@ -9,8 +9,8 @@ services.gammastep = {
     duskTime = "18:30-19:30";
     package = pkgs.gammastep;
     temperature = {
-      day = 6000;
-      night = 3700;
+      day = 5700;
+      night = 4000;
     };
     settings = {
       general = {
