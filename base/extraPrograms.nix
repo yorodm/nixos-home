@@ -31,10 +31,10 @@ in {
     x2goclient
     xorg.xhost
     transmission-gtk
+    lutris
+    ungoogled-chromium
     # Special
     lm_sensors
-    # MISC
-    mc
     # TERMINAL
     ripgrep
     any-nix-shell
@@ -56,6 +56,7 @@ in {
     default-python
     bat
     rnix-lsp
+    niv
     # SYSADMIN
     #(callPackage ./termius.nix { })
     remmina
