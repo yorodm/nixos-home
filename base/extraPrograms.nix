@@ -35,6 +35,7 @@ in {
     gcc
     gdb
     gnumake
+    zathura
     # Special
     lm_sensors
     # MISC
