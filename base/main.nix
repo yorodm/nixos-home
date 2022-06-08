@@ -13,6 +13,7 @@
     ./emacs.nix
     ./xresources.nix
     ./extraPrograms.nix
+    ./wallpapers.nix
   ];
 
   programs = {

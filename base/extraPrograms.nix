@@ -26,9 +26,10 @@ in {
   home.packages = with pkgs; [
 
     # UI
+    arandr
+    barrier
     unstable.pkgs.tdesktop
     brightnessctl
-    x2goclient
     xorg.xhost
     transmission-gtk
     ungoogled-chromium

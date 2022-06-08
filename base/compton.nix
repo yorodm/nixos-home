@@ -30,6 +30,7 @@
       fade-in-step = 0.1;
       fade-out-step = 0.1;
       fade-exclude = [ ];
+      use-damage = false;
     '';
   };
 }
