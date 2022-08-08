@@ -62,5 +62,8 @@
     zathura = {
       enable = true;
     };
+    feh = {
+      enable = true;
+    };
   };
 }

@@ -20,15 +20,14 @@ let
   #   sha256 = "0dcxc4yc2y5z08pmkmjws4ir0r2cbc5mha2a48bn0bk7nxc6wx8g";
   #   fetchSubmodules = true;
   # }) { };
-  unstable = import ( builtins.fetchTarball "https://github.com/nixos/nixpkgs/tarball/nixpkgs-unstable"){};
+  # unstable = import ( builtins.fetchTarball "https://github.com/nixos/nixpkgs/tarball/nixpkgs-unstable"){};
 
 in {
+  nixpkgs.config.allowUnfree = true;
   home.packages = with pkgs; [
-
     # UI
     arandr
-    barrier
-    unstable.pkgs.tdesktop
+    tdesktop
     brightnessctl
     xorg.xhost
     transmission-gtk
@@ -37,8 +36,12 @@ in {
     gdb
     gnumake
     zathura
+    lutris
+    steam
+    steam-run
     # Special
     lm_sensors
+    barrier
     # MISC
     protonvpn-cli
     # TERMINAL
@@ -55,7 +58,6 @@ in {
     gnupg
     aria2
     imagemagick
-    feh
     # DEVELOPMENT
     nixfmt
     default-python
@@ -67,7 +69,8 @@ in {
     remmina
     # DEFAULT
     pavucontrol
-    # wineWowPackages.stable
+    wineWowPackages.stable
+    playonlinux
     # overlay
     rofi-power
     rofi-bluetooth
