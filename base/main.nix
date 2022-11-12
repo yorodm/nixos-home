@@ -2,7 +2,6 @@
 
 {
   imports = [
-    ./alacritty.nix
     ./compton.nix
     ./i3.nix
     ./polybar.nix
@@ -23,10 +22,11 @@
 
   fonts.fontconfig.enable = true;
   xsession.enable = true;
-  xsession.pointerCursor = {
+  home.pointerCursor = {
     name = "Vanilla-DMZ";
     package = pkgs.vanilla-dmz;
     size = 26;
+    x11.enable = true;
   };
   nixpkgs.config.zathura.useMupdf = true;
   systemd.user.startServices = true;

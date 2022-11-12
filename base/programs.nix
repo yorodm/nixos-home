@@ -25,13 +25,14 @@
     direnv = {
       enable = true;
       enableZshIntegration = true;
+      nix-direnv.enable = true;
     };
     zsh = {
       enable = true;
       enableCompletion = true;
       shellAliases = {
         nix-installed =
-          "nix-instantiate --strict --json --eval -E 'builtins.map (p: p.name) (import <nixpkgs/nixos> {}).config.environment.systemPackages' | nix run nixpkgs.jq -c jq -r '.[]' | sort -u";
+          "nix-instantiate --strict --json --eval -E 'builtins.map (p: p.name) (import <nixpkgs/nixos> {}).config.environment.systemPackages' | ${pkgs.jq}/bin/jq  -r '.[]' | sort -u";
         git-dated = ''git commit -m "Updated: `date +'%Y-%m-%d %H:%M:%S'`"'';
         nix-upgrade = "sudo nixos-rebuild switch --upgrade";
       };

@@ -13,21 +13,21 @@ let
       flake8
       virtualenv
     ]);
-  # unstable = import (pkgs.fetchFromGitHub {
-  #   owner = "NixOS";
-  #   repo = "nixpkgs";
-  #   rev = "48d63e924a2666baf37f4f14a18f19347fbd54a2";
-  #   sha256 = "0dcxc4yc2y5z08pmkmjws4ir0r2cbc5mha2a48bn0bk7nxc6wx8g";
-  #   fetchSubmodules = true;
-  # }) { };
-  # unstable = import ( builtins.fetchTarball "https://github.com/nixos/nixpkgs/tarball/nixpkgs-unstable"){};
+  unstable = import (pkgs.fetchFromGitHub {
+    owner = "NixOS";
+    repo = "nixpkgs";
+    rev = "0b57dfbdd6dc70f6374f80bdf19a40f19cfd83ad";
+    sha256 = "eVwVvJUOJFAN0H+l+dnKKIdcRrYie3FprWhmRX3RVwE=";
+  }) { };
 
 in {
   nixpkgs.config.allowUnfree = true;
   home.packages = with pkgs; [
+    # Music
+    lmms
     # UI
     arandr
-    tdesktop
+    unstable.tdesktop
     brightnessctl
     xorg.xhost
     transmission-gtk
@@ -39,11 +39,11 @@ in {
     lutris
     steam
     steam-run
+    tuxguitar
+    pulseaudio
     # Special
     lm_sensors
-    barrier
-    # MISC
-    protonvpn-cli
+    cachix
     # TERMINAL
     ripgrep
     any-nix-shell
@@ -66,15 +66,16 @@ in {
     niv
     # SYSADMIN
     #(callPackage ./termius.nix { })
-    remmina
+    # remmina
     # DEFAULT
     pavucontrol
-    wineWowPackages.stable
+    wineWowPackages.unstable
     playonlinux
     # overlay
     rofi-power
     rofi-bluetooth
     xst
+    input-leap
     # Fonts
     emacs-all-the-icons-fonts
   ];

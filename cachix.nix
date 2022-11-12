@@ -8,6 +8,12 @@
     in import "${declCachix}/home-manager.nix")
   ];
 
-  caches.cachix = [ "nix-community"];
+  caches.cachix = [
+    {
+      name ="yorodm-cachix";
+      key = "yorodm-cachix.cachix.org-1:prB4NIzTvOZSpbxVfmlL/leyxp6x7zwX07j+VsRAzK8=";
+    }
+    "nix-community"
+  ];
 
 }
