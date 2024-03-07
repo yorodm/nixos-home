@@ -67,6 +67,7 @@ in {
     # Fonts
     emacs-all-the-icons-fonts
     bitwarden-cli
+    webcord
   ];
 
 }
