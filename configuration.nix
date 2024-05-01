@@ -122,6 +122,7 @@
     radeontop
     smartmontools
     wireguard-tools
+    git
     #  firmwareLinuxNonfree
     #     unstable.linux-firmware
   ];

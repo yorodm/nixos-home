@@ -50,7 +50,6 @@ in {
     nixfmt
     default-python
     bat
-    rnix-lsp
     niv
     # SYSADMIN
     #(callPackage ./termius.nix { })
