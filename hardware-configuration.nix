@@ -41,7 +41,6 @@
     # As of ROCm 4.5, AMD has disabled OpenCL on Polaris based cards. So this is needed if you have a 500 series card. 
     ROC_ENABLE_PRE_VEGA = "1";
   };
-  hardware.opengl.driSupport32Bit = true;
   hardware.bluetooth = {
     enable = true;
     package = pkgs.bluez;
