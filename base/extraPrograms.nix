@@ -27,17 +27,14 @@ in {
     gdb
     gnumake
     zathura
-    tuxguitar
     pulseaudio
     # Special
     lm_sensors
     cachix
     # TERMINAL
     ripgrep
-    any-nix-shell
     btop
     neofetch
-    cava
     zip
     unrar
     unzip
@@ -56,8 +53,6 @@ in {
     # remmina
     # DEFAULT
     pavucontrol
-    wineWowPackages.unstable
-    playonlinux
     # overlay
     # rofi-power
     # rofi-bluetooth
@@ -67,6 +62,7 @@ in {
     emacs-all-the-icons-fonts
     bitwarden-cli
     webcord
+    opencl-info
   ];
 
 }
