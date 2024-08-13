@@ -85,7 +85,7 @@
   # Configure keymap in X11
   nixpkgs.config.allowUnfree = true;
   services.xserver.xkb.layout = "us";
-  services.xserver.xkbOptions = "grp:shift_caps_toggle";
+  services.xserver.xkb.options = "grp:shift_caps_toggle";
   # services.xserver.videoDrivers = ["amdgpu" ];
   # Enable CUPS to print documents.
   # services.printing.enable = true;

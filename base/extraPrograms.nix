@@ -44,7 +44,6 @@ in {
     aria2
     imagemagick
     # DEVELOPMENT
-    nixfmt-classic
     nixfmt-rfc-style
     default-python
     bat
