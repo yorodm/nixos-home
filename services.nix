@@ -50,9 +50,19 @@
       upstream_recursive_servers = [{
         address_data = "116.202.176.26";
         tls_auth_name = "dot.libredns.gr";
+        tls_port = 853;
         tls_pubkey_pinset = [{
           digest = "sha256";
-          value = "4pqQ+yl3lAtRvKdoCCUR8iDmA53I+cJ7orgBLiF08kQ=";
+          value = "V0Y0pvWkAwOPkNSPxDyZd/vJ2bo40ylADWJFu/ubPlM=";
+         }];
+      }
+       {
+        address_data = "158.64.1.29";
+        tls_auth_name = "dnspub.restena.lu";
+        tls_port = 853;
+        tls_pubkey_pinset = [{
+          digest = "sha256";
+          value = "aC/vKm0neSr3uDucVsYO62RPZ4ETWjoI0Gw8uWjGdLg=";
         }];
       }];
     };
