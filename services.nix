@@ -43,4 +43,18 @@
     jack.enable = true;
   };
   systemd.user.services.pipewire-pulse.path = [ pkgs.pulseaudio ];
+  # Stubby DNS
+  services.stubby = {
+    enable = true;
+    settings = pkgs.stubby.passthru.settingsExample // {
+      upstream_recursive_servers = [{
+        address_data = "116.202.176.26";
+        tls_auth_name = "dot.libredns.gr";
+        tls_pubkey_pinset = [{
+          digest = "sha256";
+          valuae = "4pqQ+yl3lAtRvKdoCCUR8iDmA53I+cJ7orgBLiF08kQ=";
+        }];
+      }];
+    };
+  }
 }
