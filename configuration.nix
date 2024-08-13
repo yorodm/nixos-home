@@ -84,7 +84,7 @@
   };
   # Configure keymap in X11
   nixpkgs.config.allowUnfree = true;
-  services.xserver.layout = "us";
+  services.xserver.xkb.layout = "us";
   services.xserver.xkbOptions = "grp:shift_caps_toggle";
   # services.xserver.videoDrivers = ["amdgpu" ];
   # Enable CUPS to print documents.
@@ -96,12 +96,12 @@
   security.rtkit.enable = true;
 
   # Libinput
-  services.xserver.libinput = {
+  services.libinput = {
     enable = true;
     touchpad = {
-      tapping = true;
-      disableWhileTyping = true;
-    };
+    tapping = true;
+    disableWhileTyping = true;
+    }
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.

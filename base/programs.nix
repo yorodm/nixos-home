@@ -11,7 +11,9 @@
     };
     gh = {
       enable = true;
-      enableGitCredentialHelper = true;
+      gitCredentialHelper = {
+        enable =true;
+      };
     };
     rofi = {
       enable = true;

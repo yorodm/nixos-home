@@ -52,7 +52,7 @@
         tls_auth_name = "dot.libredns.gr";
         tls_pubkey_pinset = [{
           digest = "sha256";
-          valuae = "4pqQ+yl3lAtRvKdoCCUR8iDmA53I+cJ7orgBLiF08kQ=";
+          value = "4pqQ+yl3lAtRvKdoCCUR8iDmA53I+cJ7orgBLiF08kQ=";
         }];
       }];
     };
