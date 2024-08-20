@@ -12,7 +12,7 @@
   # programs.zsh.enable = true;  # default shell on catalina
   programs = {
     fish.enable = true;
-    gnupg.agent.enable = true;d
+    gnupg.agent.enable = true;
   };
 
   # Set Git commit hash for darwin-version.
