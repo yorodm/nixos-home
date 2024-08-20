@@ -1,5 +1,5 @@
 {
-  description = "Tammy's Flake";
+  description = "All your flake's are belongs to us";
 
   # This is the standard format for flake.nix.
   # `inputs` are the dependencies of the flake,
