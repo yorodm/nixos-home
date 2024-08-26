@@ -22,6 +22,7 @@
       # to avoid problems caused by different versions of nixpkgs.
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     nixos-hardware = {
 	    url = "github:NixOS/nixos-hardware/master";
     };
@@ -73,26 +74,25 @@
     darwinConfigurations = {
       "machine-spirit" = nix-darwin.lib.darwinSystem {
         modules = [
-          ./darwin-configuration.nix
+          ./macos/darwin-configuration.nix
           nix-homebrew.darwinModules.nix-homebrew {
-          nix-homebrew = {
-            # Install Homebrew under the default prefix
-            enable = true;
+            nix-homebrew = {
+              # Install Homebrew under the default prefix
+              enable = true;
+              autoMigrate = true;
+              # User owning the Homebrew prefix
+              user = "jadex";
 
-            # User owning the Homebrew prefix
-            user = "jadex";
+              # Automatically migrate existing Homebrew installations
+              mutableTaps = false;
+              taps = {
+                "d12frosted/emacs-plus" = emacs-plus;
+                "homebrew/homebrew-core" = homebrew-core;
+                "homebrew/homebrew-cask" = homebrew-cask;
+                "homebrew/homebrew-bundle" = homebrew-bundle;
 
-            # Automatically migrate existing Homebrew installations
-            autoMigrate = true;
-            mutableTaps = false;
-            taps = {
-              "d12frosted/emacs-plus" = emacs-plus;
-              "homebrew/homebrew-core" = homebrew-core;
-              "homebrew/homebrew-cask" = homebrew-cask;
-              "homebrew/homebrew-bundle" = homebrew-bundle;
-
+              };
             };
-          };
         }
         ];
       };
@@ -158,12 +158,12 @@
           # Import the configuration.nix here, so that the
           # old configuration file can still take effect.
           # Note: configuration.nix itself is also a Nixpkgs Module,
-         ./configuration.nix
+         ./linux/configuration.nix
 	       nixos-hardware.nixosModules.lenovo-thinkpad-t495
 	       home-manager.nixosModules.home-manager  {
              # home-manager.useGlobalPkgs = true;
              home-manager.useUserPackages = true;
-             home-manager.users.jadex = import ./home.nix;
+             home-manager.users.jadex = import ./linux/home.nix;
          }
         ];
       };
