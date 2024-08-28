@@ -52,7 +52,7 @@
       flake = false;
     };
 
-     emacs-plus = {
+    emacs-plus = {
       url = "github:d12frosted/homebrew-emacs-plus";
       flake = false;
     };
@@ -69,7 +69,7 @@
   #
   # The `@` syntax here is used to alias the attribute set of the
   # inputs's parameter, making it convenient to use inside the function.
-  outputs = { self, nixpkgs, nix-darwin, nix-homebrew, nixos-hardware, home-manager, homebrew-bundle, homebrew-core, homebrew-cask, emacs-plus, ... } @inputs: {
+  outputs = { self, nixpkgs, nix-darwin, nix-homebrew, nixos-hardware, home-manager, homebrew-bundle, homebrew-core, homebrew-cask, homebrew-services, emacs-plus, ... } @inputs: {
 
     darwinConfigurations = {
       "machine-spirit" = nix-darwin.lib.darwinSystem {
@@ -99,7 +99,7 @@
                 "homebrew/homebrew-core" = homebrew-core;
                 "homebrew/homebrew-cask" = homebrew-cask;
                 "homebrew/homebrew-bundle" = homebrew-bundle;
-
+                "homebrew/homebrew-services" = homebrew-services;
               };
             };
           }

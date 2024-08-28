@@ -15,7 +15,6 @@
     ];
 
   programs = {
-    fish.enable = true;
     gnupg.agent.enable = true;
     zsh.enable = true;
   };
@@ -70,20 +69,12 @@
   };
 
   system.defaults = {
-    dock = {
-      autohide = true;
-      orientation = "left";
-      show-process-indicators = false;
-      show-recents = false;
-      static-only = true;
-    };
     finder = {
       AppleShowAllExtensions = true;
       ShowPathbar = true;
       FXEnableExtensionChangeWarning = false;
     };
   };
-
   # Set Git commit hash for darwin-version.
   # system.configurationRevision = self.rev or self.dirtyRev or null;
 

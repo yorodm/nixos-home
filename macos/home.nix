@@ -1,6 +1,17 @@
 { config, pkgs, lib, ... }:
 
 {
+
+  imports = [
+    ./dock.nix
+  ];
+
+  local = {
+    dock.enable = true;
+    dock.entries = [
+      { path = "/System/Applications/Home.app/"; }
+    ];
+  };
   home = {
 
     packages = [
@@ -8,8 +19,9 @@
       pkgs.ripgrep
       pkgs.bat
       pkgs.htop
-      pkgs.lsd
+       pkgs.lsd
       pkgs.neofetch
+      pkgs.dockutil
     ];
 
     stateVersion = "24.05";
@@ -17,35 +29,17 @@
 
   programs = {
     home-manager.enable = true;
-    # Use fish
-    fish = {
+    zsh = {
       enable = true;
-
-      interactiveShellInit = ''
-        set fish_greeting # N/A
-      '';
-
-      plugins = [
-        {
-          # TODO: Remove this
-          name = "fish-asdf";
-          src = pkgs.fetchFromGitHub {
-            owner = "rstacruz";
-            repo = "fish-asdf";
-            rev = "5869c1b1ecfba63f461abd8f98cb21faf337d004";
-            sha256 = "39L6UDslgIEymFsQY8klV/aluU971twRUymzRL17+6c=";
-          };
-        }
-        {
-          name = "nix-env";
-          src = pkgs.fetchFromGitHub {
-            owner = "lilyball";
-            repo = "nix-env.fish";
-            rev = "7b65bd228429e852c8fdfa07601159130a818cfa";
-            hash = "sha256-RG/0rfhgq6aEKNZ0XwIqOaZ6K5S4+/Y5EEMnIdtfPhk=";
-          };
-        }
-      ];
+      shellAliases = {
+        ll = "ls -l";
+        update = "sudo nixos-rebuild switch";
+      };
+      oh-my-zsh = {
+        enable = true;
+        plugins = [ ];
+        theme = "agnoster";
+      };
     };
 
     direnv = {
