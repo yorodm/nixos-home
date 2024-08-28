@@ -44,7 +44,7 @@
   #   };
   # };
 
-  fonts.fonts = [
+  fonts.packages = [
     pkgs.monaspace
     pkgs.nerdfonts
   ];
