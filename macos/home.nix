@@ -6,7 +6,12 @@
     packages = [
       pkgs.nixd
       pkgs.ripgrep
+      pkgs.bat
+      pkgs.htop
+      pkgs.lsd
+      pkgs.neofetch
     ];
+
     stateVersion = "24.05";
   };
 

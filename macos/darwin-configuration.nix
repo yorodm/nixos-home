@@ -44,34 +44,23 @@
   #   };
   # };
 
-  fonts.fontDir.enable = true;
   fonts.fonts = [
     pkgs.monaspace
+    pkgs.nerdfonts
   ];
 
   homebrew = {
     enable = true;
 
     brews = [
-       "bat"
-       "cfssl"
        "docker"
-       "fish"
-       "htop"
-       "hyperkit"
        "kubernetes-cli"
-       "lsd"
-       "neofetch"
        "osx-cpu-temp"
-       "qemu"
-       "ripgrep"
        "smartmontools"
-       "starship"
        "watch"
        "wireguard-tools"
     ];
     casks = [
-       "font-0xproto-nerd-font"
        "iterm2"
        "keepingyouawake"
        "monitorcontrol"
