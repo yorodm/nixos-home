@@ -7,10 +7,11 @@
       pkgs.nixd
       pkgs.ripgrep
     ];
-
+    stateVersion = "24.05";
   };
 
   programs = {
+    home-manager.enable = true;
     # Use fish
     fish = {
       enable = true;
