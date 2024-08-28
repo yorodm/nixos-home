@@ -28,8 +28,12 @@
       oh-my-zsh = {
         enable = true;
         plugins = [ ];
-        theme = "agnoster";
       };
+      initExtra = ''
+      if [[ $TERM == "dumb" ]]; then
+        PROMPT="$"
+      fi
+    '';
     };
 
     direnv = {
