@@ -1,17 +1,7 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, home-manager, ... }:
 
 {
 
-  imports = [
-    ./dock.nix
-  ];
-
-  local = {
-    dock.enable = true;
-    dock.entries = [
-      { path = "/System/Applications/Home.app/"; }
-    ];
-  };
   home = {
 
     packages = [
