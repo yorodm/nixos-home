@@ -75,6 +75,15 @@
       "machine-spirit" = nix-darwin.lib.darwinSystem {
         modules = [
           ./macos/darwin-configuration.nix
+          home-manager.darwinModules.home-manager
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.jadex = import ./macos/home.nix;
+            };
+            users.users.jadex.home = "/Users/jadex";
+          }
           nix-homebrew.darwinModules.nix-homebrew {
             nix-homebrew = {
               # Install Homebrew under the default prefix
@@ -93,8 +102,9 @@
 
               };
             };
-        }
+          }
         ];
+        specialArgs = { inherit inputs; };
       };
     };
 
