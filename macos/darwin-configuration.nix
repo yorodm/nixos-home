@@ -58,6 +58,7 @@
        "smartmontools"
        "watch"
        "wireguard-tools"
+       "transmission"
     ];
     casks = [
        "iterm2"
