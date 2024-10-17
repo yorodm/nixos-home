@@ -67,6 +67,7 @@
        "multipass"
        "smcfancontrol"
        "zed"
+       "firefox"
     ];
   };
 
