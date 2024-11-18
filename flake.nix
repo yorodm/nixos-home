@@ -13,6 +13,7 @@
 
     # Official NixOS package source, using nixos-23.11 branch here
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
+    nixpkgs-darwin.url = "github:NixOS/nixpkgs/nixpkgs-24.05-darwin";
     # home-manager, used for managing user configuration
     home-manager = {
       url = "github:nix-community/home-manager/release-24.05";
@@ -27,10 +28,10 @@
 	    url = "github:NixOS/nixos-hardware/master";
     };
     nix-darwin.url = "github:LnL7/nix-darwin";
-    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+    nix-darwin.inputs.nixpkgs.follows = "nixpkgs-darwin";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
-    nix-homebrew.inputs.nixpkgs.follows = "nixpkgs";
-    nix-homebrew.inputs.nix-darwin.follows = "nixpkgs";
+    nix-homebrew.inputs.nixpkgs.follows = "nixpkgs-darwin";
+    nix-homebrew.inputs.nix-darwin.follows = "nix-darwin";
 
     homebrew-bundle = {
       url = "github:homebrew/homebrew-bundle";
@@ -69,7 +70,7 @@
   #
   # The `@` syntax here is used to alias the attribute set of the
   # inputs's parameter, making it convenient to use inside the function.
-  outputs = { self, nixpkgs, nix-darwin, nix-homebrew, nixos-hardware, home-manager, homebrew-bundle, homebrew-core, homebrew-cask, homebrew-services, emacs-plus, ... } @inputs: {
+  outputs = { self, nixpkgs, nixpkgs-darwin, nix-darwin, nix-homebrew, nixos-hardware, home-manager, homebrew-bundle, homebrew-core, homebrew-cask, homebrew-services, emacs-plus, ... } @inputs: {
 
     darwinConfigurations = {
       "machine-spirit" = nix-darwin.lib.darwinSystem {
