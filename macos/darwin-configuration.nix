@@ -59,16 +59,19 @@
        "watch"
        "wireguard-tools"
        "transmission"
+       "lima"
     ];
     casks = [
        "iterm2"
        "keepingyouawake"
        "monitorcontrol"
-       "multipass"
        "smcfancontrol"
        "zed"
        "firefox"
     ];
+    onActivation = {
+      cleanup = "zap";
+    };
   };
 
   system.defaults = {
