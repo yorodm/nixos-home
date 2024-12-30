@@ -127,6 +127,11 @@
         system = "x86_64-linux";
         modules = [
           ./machine-spirit/configuration.nix
+          {
+            nix = {
+              settings.experimental-features = [ "nix-command" "flakes" ];
+            };
+          }
           ./common/services.nix
 	       home-manager.nixosModules.home-manager  {
              # home-manager.useGlobalPkgs = true;
