@@ -32,7 +32,7 @@ in
         "${modifier}+Shift+d" = "exec ${pkgs.rofi}/bin/rofi -show window";
         # "${modifier}+Shift+x" = "exec ${pkgs.rofi-power}/bin/rofi-power";
         # "${modifier}+Shift+b" = "exec ${pkgs.rofi-bluetooth}/bin/rofi-bluetooth";
-        "${modifier}+Shift+f" = "exec ${pkgs.xst}/bin/xst -e ${pkgs.nnn}/bin/nnn";
+        "${modifier}+Shift+f" = "exec ${pkgs.xst}/bin/xst -e ${pkgs.yazi}/bin/yazi";
         "${modifier}+Shift+e" = "exec ${emacsclient}";
       };
 

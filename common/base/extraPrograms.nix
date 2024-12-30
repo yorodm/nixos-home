@@ -48,6 +48,8 @@ in {
     default-python
     bat
     niv
+    fd
+    yazi
     # SYSADMIN
     #(callPackage ./termius.nix { })
     # remmina
