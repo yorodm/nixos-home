@@ -11,7 +11,7 @@
   boot.initrd.availableKernelModules = [ "ehci_pci" "nvme" "xhci_pci" ];
   boot.initrd.kernelModules = [ "dm-snapshot" ];
   boot.kernelModules = [ "kvm-intel" "wl" "coretemp" "applesmc"];
-  boot.blacklistedKernelModules = ["radeon"]
+  boot.kernelParams = ["radeon.si_support=0" "amdgpu.si_support=1"];
   boot.extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking

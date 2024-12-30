@@ -7,9 +7,9 @@
   home.homeDirectory = "/home/jadex";
 
   # imports
-  imports = [ 
-	#./overlay/main.nix 
-	./base/main.nix 
+  imports = [
+	#./overlay/main.nix
+	./base/main.nix
 	];
 
   # Settings for nix conf
@@ -29,6 +29,5 @@
   # You can update Home Manager without changing this value. See
   # the Home Manager release notes for a list of state version
   # changes in each release.
-  home.stateVersion = "21.11";
-
+  home.stateVersion = "24.11";
 }

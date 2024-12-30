@@ -8,8 +8,6 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      "${builtins.fetchTarball "https://github.com/nix-community/disko/archive/master.tar.gz"}/module.nix"
-      ./disk-config.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -18,8 +16,18 @@
 
   networking.hostName = "machine-spirit"; # Define your hostname.
   # Pick only one of the below networking options.
-  networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+
+  networking = {
+    nameservers = [ "127.0.0.1" "::1" ];
+    networkmanager = {
+      enable = true;
+      dns = "none";
+    };
+  };
+
+ systemd.services.NetworkManager-wait-online.enable = false;
 
   # Set your time zone.
   time.timeZone = "Europe/Sofia";

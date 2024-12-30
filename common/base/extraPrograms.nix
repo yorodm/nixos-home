@@ -21,7 +21,7 @@ in {
     tdesktop
     brightnessctl
     xorg.xhost
-    transmission-gtk
+    transmission_4-gtk
     ungoogled-chromium
     gcc
     gdb
@@ -62,7 +62,7 @@ in {
     emacs-all-the-icons-fonts
     bitwarden-cli
     webcord
-    opencl-info
+    clinfo
   ];
 
 }

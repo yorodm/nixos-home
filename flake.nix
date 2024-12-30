@@ -12,11 +12,11 @@
     # which represents the GitHub repository URL + branch/commit-id/tag.
 
     # Official NixOS package source, using nixos-23.11 branch here
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
-    nixpkgs-darwin.url = "github:NixOS/nixpkgs/nixpkgs-24.05-darwin";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
+    nixpkgs-darwin.url = "github:NixOS/nixpkgs/nixpkgs-24.11-darwin";
     # home-manager, used for managing user configuration
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.05";
+      url = "github:nix-community/home-manager/release-24.11";
       # The `follows` keyword in inputs is used for inheritance.
       # Here, `inputs.nixpkgs` of home-manager is kept consistent with
       # the `inputs.nixpkgs` of the current flake,
@@ -27,6 +27,8 @@
     nixos-hardware = {
 	    url = "github:NixOS/nixos-hardware/master";
     };
+    disko.url = "github:nix-community/disko";
+    disko.inputs.nixpkgs.follows = "nixpkgs";
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs-darwin";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
@@ -70,7 +72,7 @@
   #
   # The `@` syntax here is used to alias the attribute set of the
   # inputs's parameter, making it convenient to use inside the function.
-  outputs = { self, nixpkgs, nixpkgs-darwin, nix-darwin, nix-homebrew, nixos-hardware, home-manager, homebrew-bundle, homebrew-core, homebrew-cask, homebrew-services, emacs-plus, ... } @inputs: {
+  outputs = { self, nixpkgs, disko, nixpkgs-darwin, nix-darwin, nix-homebrew, nixos-hardware, home-manager, homebrew-bundle, homebrew-core, homebrew-cask, homebrew-services, emacs-plus, ... } @inputs: {
 
     darwinConfigurations = {
       "machine-spirit" = nix-darwin.lib.darwinSystem {
@@ -125,7 +127,10 @@
       #   sudo nixos-rebuild switch --flake .#nixos-test
       "machine-spirit" = nixpkgs.lib.nixosSystem{
         system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
         modules = [
+          disko.nixosModules.disko
+          ./machine-spirit/disk-config.nix
           ./machine-spirit/configuration.nix
           {
             nix = {
@@ -142,7 +147,7 @@
       };
       "tammy" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-
+        specialArgs = { inherit inputs; };
         # The Nix module system can modularize configuration,
         # improving the maintainability of configuration.
         #
