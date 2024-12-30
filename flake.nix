@@ -123,6 +123,18 @@
       # Run the following command in the flake's directory to
       # deploy this configuration on any NixOS system:
       #   sudo nixos-rebuild switch --flake .#nixos-test
+      "machine-spirit" = nixpkgs.lib.nixosSystem{
+        system = "x86_64-linux";
+        modules = [
+          ./machine-spirit/configuration.nix
+          ./common/services.nix
+	       home-manager.nixosModules.home-manager  {
+             # home-manager.useGlobalPkgs = true;
+             home-manager.useUserPackages = true;
+             home-manager.users.jadex = import ./common/home.nix;
+         }
+        ];
+      };
       "tammy" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
 
@@ -169,7 +181,8 @@
           # Import the configuration.nix here, so that the
           # old configuration file can still take effect.
           # Note: configuration.nix itself is also a Nixpkgs Module,
-         ./linux/configuration.nix
+          ./laptop/configuration.nix
+          ./common/services.nix
 	       nixos-hardware.nixosModules.lenovo-thinkpad-t495
 	       home-manager.nixosModules.home-manager  {
              # home-manager.useGlobalPkgs = true;
