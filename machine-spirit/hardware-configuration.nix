@@ -13,11 +13,21 @@
     initrd.kernelModules = [
       "applesmc"
       "applespi"
+      "i915"
       "intel_lpss_pci"
       "spi_pxa2xx_platform"
       "kvm-intel"
       "dm-snapshot"
     ];
+    initrd.availableKernelModules = [
+      "ehci_pci"
+      "nvme"
+      "xhci_pci"
+      "usbhid"
+      "usb_storage"
+      "sd_mod"
+    ];
+    kernelModules = ["kvm-intel" "wl"];
     blacklistedKernelModules = [
       "b43"
       "ssb"
@@ -25,8 +35,14 @@
       "brcmsmac"
       "bcma"
     ];
-    extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
-    kernelParams = ["radeon.si_support=0" "amdgpu.si_support=1"];
+   extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
+    kernelParams = [
+      "i915.enable_rc6=7"
+      "intel_pstate=active"
+      "acpi_mask_gpe=0x15"
+      "radeon.si_support=0"
+      "amdgpu.si_support=1"
+    ];
   };
 
   # boot.initrd.availableKernelModules = [ "ehci_pci" "nvme" "xhci_pci" ];
