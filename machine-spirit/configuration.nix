@@ -23,6 +23,7 @@
   networking = {
     enableB43Firmware = true;
     nameservers = [ "127.0.0.1" "::1" ];
+    firewall.allowedTCPPorts = [ 22 4646 ];
     firewall.checkReversePath = false;
     networkmanager = {
       insertNameservers = [ "127.0.0.1" "::1" ];
@@ -32,9 +33,13 @@
     };
   };
 
- systemd.services.NetworkManager-wait-online.enable = false;
-
-  # Set your time zone.
+  systemd.services.NetworkManager-wait-online.enable = false;
+  services.mbpfan = {
+    enable = true;
+    verbose = true;
+    aggressive = true;
+  };
+    # Set your time zone.
   time.timeZone = "Europe/Sofia";
 
   # Configure network proxy if necessary
@@ -85,7 +90,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.jadex = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "video" "kvm" "audio" "root"]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "networkmanager" "video" "kvm" "audio" "root" "docker"]; # Enable ‘sudo’ for the user.
   };
 
   # programs.firefox.enable = true;
