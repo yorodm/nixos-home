@@ -45,6 +45,8 @@
     ];
   };
 
+  boot.supportedFilesystems = [ "ntfs" ];
+
   # boot.initrd.availableKernelModules = [ "ehci_pci" "nvme" "xhci_pci" ];
   # boot.initrd.kernelModules = [ "dm-snapshot"];
   # boot.kernelModules = [ "kvm-intel" "coretemp" "applesmc" "wl"];

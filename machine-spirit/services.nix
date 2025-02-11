@@ -1,7 +1,12 @@
 {lib, pkgs, ...}:
-
 {
 
+  services.ollama  = {
+    enabled = true;
+    acceleration = false;
+    openFirewall = true;
+    loadModels = ["codeqwen"];
+  };
   services.nomad = {
     enable = true;
     enableDocker = true;
@@ -30,4 +35,5 @@
   environment.systemPackages = with pkgs; [
     damon # nomad tui
   ];
+
 }
