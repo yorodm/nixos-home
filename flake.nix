@@ -1,6 +1,16 @@
 {
   description = "All your flake's are belongs to us";
 
+  # nixConfig = {
+  #   # override the default substituters
+  #   substituters = [
+  #     "https://cache.nixos.org"
+  #     "https://nix-community.cachix.org"
+  #   ];
+  #   trusted-public-keys = [
+  #     "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+  #   ];
+  # };
   # This is the standard format for flake.nix.
   # `inputs` are the dependencies of the flake,
   # and `outputs` function will return all the build results of the flake.
@@ -143,11 +153,11 @@
             };
           }
           ./common/services.nix
-	       home-manager.nixosModules.home-manager  {
-             # home-manager.useGlobalPkgs = true;
-             home-manager.useUserPackages = true;
-             home-manager.users.jadex = import ./common/home.nix;
-         }
+	        home-manager.nixosModules.home-manager  {
+            # home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.jadex = import ./common/home.nix;
+          }
         ];
       };
       "tammy" = nixpkgs.lib.nixosSystem {
@@ -198,12 +208,12 @@
           # Note: configuration.nix itself is also a Nixpkgs Module,
           ./laptop/configuration.nix
           ./common/services.nix
-	       nixos-hardware.nixosModules.lenovo-thinkpad-t495
-	       home-manager.nixosModules.home-manager  {
-             # home-manager.useGlobalPkgs = true;
-             home-manager.useUserPackages = true;
-             home-manager.users.jadex = import ./linux/home.nix;
-         }
+	        nixos-hardware.nixosModules.lenovo-thinkpad-t495
+	        home-manager.nixosModules.home-manager  {
+            # home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.jadex = import ./linux/home.nix;
+          }
         ];
       };
     };

@@ -1,6 +1,11 @@
 {lib, pkgs, ...}:
 {
 
+  services.tailscale = {
+    enable = true;
+    useRoutingFeatures = "both";
+  };
+
   services.ollama  = {
     enable = true;
     acceleration = false;
