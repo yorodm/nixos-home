@@ -65,6 +65,8 @@ in {
     bitwarden-cli
     webcord
     clinfo
+    kube3d
+    kubectl
   ];
 
 }
