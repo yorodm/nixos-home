@@ -23,7 +23,8 @@
     enableB43Firmware = true;
     nameservers = [ "127.0.0.1" "::1" ];
     firewall.allowedTCPPorts = [ 22 6443];
-    firewall.allowedUDPPorts = [8472 ];
+    firewall.enable = true;
+    firewall.trustedInterfaces = ["tailscale0"];
     networkmanager = {
       insertNameservers = [ "127.0.0.1" "::1" ];
       enable = true;
