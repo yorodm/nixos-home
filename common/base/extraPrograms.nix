@@ -62,11 +62,10 @@ in {
     # input-leap
     # Fonts
     emacs-all-the-icons-fonts
-    bitwarden-cli
     webcord
     clinfo
-    kube3d
     kubectl
+    k3d
   ];
 
 }
