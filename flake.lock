@@ -131,6 +131,7 @@
         "owner": "homebrew",
         "repo": "homebrew-cask",
         "rev": "aaddf83adedbe8d7aa47747598a84e94cd213a89",
+
         "type": "github"
       },
       "original": {
