@@ -17,6 +17,8 @@ in {
   nixpkgs.config.allowUnfree = true;
   home.packages = with pkgs; [
     # UI
+    (pkgs.nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
+    cascadia-code
     arandr
     tdesktop
     brightnessctl
