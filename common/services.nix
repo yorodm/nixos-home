@@ -1,6 +1,41 @@
 { config, pkgs, ... }:
 
 {
+
+# Enable the X11 windowing system.
+  # services.xserver.enable = true;
+  services.xserver.enable = true;
+  # services.xserver.displayManager.lightdm.greeter.enable = true;
+  services.xserver.windowManager.session = lib.singleton {
+    name = "xsession";
+    start = pkgs.writeScript "xsession" ''
+      #!${pkgs.runtimeShell}
+        if test -f $HOME/.xsession; then
+          exec ${pkgs.runtimeShell} -c $HOME/.xsession
+        else
+          echo "No xsession script found"
+          exit 1
+        fi
+    '';
+  };
+  # Configure keymap in X11
+  nixpkgs.config.allowUnfree = true;
+  services.xserver.xkb.layout = "us";
+  services.xserver.xkb.options = "grp:shift_caps_toggle";
+
+
+
+  # Configure keymap in X11
+  # services.xserver.xkb.layout = "us";
+  # services.xserver.xkb.options = "eurosign:e,caps:escape";
+
+  # Enable CUPS to print documents.
+  services.printing.enable = true;
+
+
+  # Enable touchpad support (enabled default in most desktopManager).
+  # services.libinput.enable = true;
+
   services.logind = {
     lidSwitch = "suspend-then-hibernate";
     extraConfig = ''
@@ -27,7 +62,13 @@
     pulse.enable = true;
     jack.enable = true;
   };
-    systemd.user.services.pipewire-pulse.path = [ pkgs.pulseaudio ];
+  systemd.user.services.pipewire-pulse.path = [ pkgs.pulseaudio ];
+
+  services.tailscale = {
+    enable = true;
+    useRoutingFeatures = "both";
+  };
+
   # Stubby DNS
   services.stubby = {
     enable = true;

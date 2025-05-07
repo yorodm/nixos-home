@@ -139,6 +139,27 @@
       # Run the following command in the flake's directory to
       # deploy this configuration on any NixOS system:
       #   sudo nixos-rebuild switch --flake .#nixos-test
+      "three-of-five" = nixpkgs.lib.nixosSystem{
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
+        modules = [
+          lix-module.nixosModules.default
+          disko.nixosModules.disko
+          ./three-of-five/disk-config.nix
+          ./threee-of-five/configuration.nix
+          {
+            nix = {
+              settings.experimental-features = [ "nix-command" "flakes" ];
+            };
+          }
+          ./common/services.nix
+	        home-manager.nixosModules.home-manager  {
+            # home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.jadex = import ./common/home.nix;
+          }
+        ];
+      };
       "machine-spirit" = nixpkgs.lib.nixosSystem{
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
