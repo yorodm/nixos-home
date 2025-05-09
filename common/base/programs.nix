@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib,  ... }:
 
 {
   programs = {
@@ -12,7 +12,7 @@
     gh = {
       enable = true;
       gitCredentialHelper = {
-        enable =true;
+        enable = true;
       };
     };
     rofi = {
@@ -33,32 +33,26 @@
       enable = true;
       enableCompletion = true;
       shellAliases = {
-        nix-installed =
-          "nix-instantiate --strict --json --eval -E 'builtins.map (p: p.name) (import <nixpkgs/nixos> {}).config.environment.systemPackages' | ${pkgs.jq}/bin/jq  -r '.[]' | sort -u";
+        nix-installed = "nix-instantiate --strict --json --eval -E 'builtins.map (p: p.name) (import <nixpkgs/nixos> {}).config.environment.systemPackages' | ${pkgs.jq}/bin/jq  -r '.[]' | sort -u";
         git-dated = ''git commit -m "Updated: `date +'%Y-%m-%d %H:%M:%S'`"'';
         nix-upgrade = "sudo nixos-rebuild switch --upgrade";
       };
       oh-my-zsh = {
         enable = true;
-        plugins = [ "git" "rust" "ssh-agent" "themes" "systemd"];
+        plugins = [
+          "git"
+          "rust"
+          "ssh-agent"
+          "themes"
+          "systemd"
+        ];
         theme = "robbyrussell";
       };
     };
-    firefox = { enable = true; };
-    nnn = {
+    firefox = {
       enable = true;
-      package = pkgs.nnn.override ({ withNerdIcons = true; });
-    };
-    password-store = {
-      enable = true;
-      settings = {
-        PASSWORD_STORE_DIR ="$HOME/.password-store";
-      };
     };
     mpv = {
-      enable = true;
-    };
-    rofi.pass = {
       enable = true;
     };
     # In main.nix theres an entry for the engine to use
@@ -67,6 +61,32 @@
     };
     feh = {
       enable = true;
+    };
+    zed-editor = {
+      enable = true;
+      extensions = [
+        "nix"
+        "catppuccin"
+        "catpuccin-icons"
+        "elm"
+      ];
+      userSettings = {
+        icon_theme = "Catppuccin Mocha";
+        theme = "Catppuccin Mocha";
+        features = {
+          copilot = false;
+        };
+        assistans = {
+          enabled = false;
+        };
+        telemetry = {
+          metrics = false;
+          diagnostics = false;
+        };
+        vim_mode = false;
+        ui_font_size = lib.mkForce 16;
+        buffer_font_size = lib.mkForce 16;
+      };
     };
   };
 }

@@ -4,7 +4,8 @@
   imports = [
     ./compton.nix
     ./i3.nix
-    ./polybar.nix
+    ./i3status.nix
+#    ./polybar.nix
     ./redshift.nix
     ./extra.nix
     ./programs.nix

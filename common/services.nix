@@ -71,6 +71,8 @@
   };
 
   # Stubby DNS
+  networking.networkmanager.dns = "none";
+  networking.nameservers = ["127.0.0.1" "::1"];
   services.stubby = {
     enable = true;
     settings = pkgs.stubby.passthru.settingsExample // {

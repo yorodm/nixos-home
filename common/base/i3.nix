@@ -6,16 +6,23 @@ in
 {
   xsession.windowManager.i3 = {
     enable = true;
-    package = pkgs.i3-gaps;
-
+    package = pkgs.i3-rounded;
     config = rec {
       modifier = "Mod4";
-      bars = [ ];
-
-      window.border = 0;
-
+      bars = [
+        {
+          fonts = {
+            names = [ "DejaVu Sans Mono" "FontAwesome5Free" ];
+            style = "Bold Semi-Condensed";
+            size = 12.0;
+          };
+          position = "top";
+          statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ~/.config/i3status-rust/config-default.toml";
+        }
+      ];
+      window.border = 15;
       gaps = {
-        inner = 15;
+        inner = 5;
         outer = 5;
       };
 
@@ -39,11 +46,6 @@ in
       startup = [
         {
           command = "exec i3-msg workspace 1";
-          always = true;
-          notification = false;
-        }
-        {
-          command = "systemctl --user restart polybar.service";
           always = true;
           notification = false;
         }
