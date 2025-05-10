@@ -49,7 +49,6 @@ in {
     nixfmt-rfc-style
     default-python
     bat
-    niv
     fd
     yazi
     # SYSADMIN
@@ -68,6 +67,8 @@ in {
     clinfo
     kubectl
     k3d
+    nixd
+    nil
   ];
 
 }
