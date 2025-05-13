@@ -70,6 +70,8 @@
     useRoutingFeatures = "both";
   };
 
+  # Blueman
+  services.blueman.enable = true;
   # Stubby DNS
   networking.networkmanager.dns = "none";
   networking.nameservers = ["127.0.0.1" "::1"];

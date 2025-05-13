@@ -50,7 +50,7 @@ in
           notification = false;
         }
         {
-          command = "${pkgs.feh}/bin/feh --bg-scale ~/wallpapers/wallpaper.jpg";
+          command = "${pkgs.feh}/bin/feh --bg-scale ~/wallpapers/wallpaper.png";
           always = true;
           notification = false;
         }

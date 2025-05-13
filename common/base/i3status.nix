@@ -26,6 +26,9 @@
               interval = 1;
             }
             {
+              block = "temperature";
+            }
+            {
               block = "sound";
             }
             {

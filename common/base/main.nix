@@ -5,15 +5,12 @@
     ./compton.nix
     ./i3.nix
     ./i3status.nix
-#    ./polybar.nix
-    ./redshift.nix
     ./extra.nix
     ./programs.nix
     ./dunst.nix
     ./emacs.nix
     ./xresources.nix
     ./extraPrograms.nix
-#    ./wallpapers.nix
   ];
 
   programs = {
@@ -29,8 +26,14 @@
     size = 26;
     x11.enable = true;
   };
+
   nixpkgs.config.zathura.useMupdf = true;
-  systemd.user.startServices = true;
+
+  systemd.user = {
+    enable = true;
+    startServices = "sd-switch";
+  };
+
   home.keyboard = {
     layout = "us, us";
     variant = ", intl";
@@ -38,4 +41,5 @@
       "grp:shift_caps_toggle" # toggle variants with alt+shift
     ];
   };
+
 }

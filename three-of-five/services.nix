@@ -2,6 +2,10 @@
 
 {
 
+  services.blueman = {
+    enable = true;
+  };
+
   services.tlp = {
     enable = true;
     settings = {

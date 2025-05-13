@@ -1,13 +1,21 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 let
   battery = "BAT0";
   notifyCapacity = 40;
   suspendCapacity = 15;
-in {
+in
+{
   services = {
 
-    poweralertd = { enable = true; };
+    poweralertd = {
+      enable = true;
+    };
     xidlehook = {
       enable = true;
       not-when-fullscreen = true;
@@ -23,7 +31,12 @@ in {
       ];
 
     };
-    udiskie = { enable = true; };
+    udiskie = {
+      enable = true;
+    };
+    blueman-applet = {
+      enable = true;
+    };
   };
 
   xdg.mimeApps = {
