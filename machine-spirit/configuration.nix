@@ -82,6 +82,9 @@
     enableSSHSupport = true;
   };
 
+  systemd.tmpfiles.rules = [
+    "w    /sys/devices/system/cpu/intel_pstate/no_turbo -    -    -    -   1"
+  ];
   # List services that you want to enable:
 
   # Open ports in the firewall.
