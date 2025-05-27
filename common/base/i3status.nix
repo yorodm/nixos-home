@@ -27,6 +27,7 @@
             }
             {
               block = "temperature";
+              format = "$icon $max max";
             }
             {
               block = "sound";
