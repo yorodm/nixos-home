@@ -17,7 +17,9 @@ in {
   nixpkgs.config.allowUnfree = true;
   home.packages = with pkgs; [
     # UI
-    (pkgs.nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
+#    (pkgs.nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
+    nerd-fonts.fira-code
+    nerd-fonts.drod-sans-mono
     cascadia-code
     arandr
     tdesktop
