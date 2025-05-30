@@ -19,7 +19,7 @@ in {
     # UI
 #    (pkgs.nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
     nerd-fonts.fira-code
-    nerd-fonts.drod-sans-mono
+    nerd-fonts.droid-sans-mono
     cascadia-code
     arandr
     tdesktop
