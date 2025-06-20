@@ -24,6 +24,7 @@ in {
     arandr
     tdesktop
     brightnessctl
+    xsct
     xorg.xhost
     transmission_4-gtk
     ungoogled-chromium
@@ -53,6 +54,7 @@ in {
     bat
     fd
     yazi
+    julia-lts
     # SYSADMIN
     #(callPackage ./termius.nix { })
     # remmina
