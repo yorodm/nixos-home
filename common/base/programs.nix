@@ -15,15 +15,6 @@
         enable = true;
       };
     };
-    rofi = {
-      enable = true;
-      theme = ./files/theme.rasi;
-      extraConfig = {
-        show-icons = true;
-        hide-scrollbar = true;
-      };
-      terminal = "${pkgs.xst}/bin/xst -e ${pkgs.zsh}/bin/zsh";
-    };
     direnv = {
       enable = true;
       enableZshIntegration = true;
@@ -51,6 +42,7 @@
     };
     firefox = {
       enable = true;
+      package = pkgs.firefox-wayland; # Use Wayland-native Firefox
     };
     mpv = {
       enable = true;
@@ -59,7 +51,8 @@
     zathura = {
       enable = true;
     };
-    feh = {
+    # Replace feh with a Wayland-compatible image viewer
+    imv = {
       enable = true;
     };
     zed-editor = {
@@ -88,5 +81,22 @@
         buffer_font_size = lib.mkForce 16;
       };
     };
+    
+    # Add Wayland-specific utilities
+    wl-clipboard = {
+      enable = true;
+    };
   };
+  
+  # Add Wayland-specific packages
+  home.packages = with pkgs; [
+    grim # Screenshot utility for Wayland
+    slurp # Region selection for Wayland screenshots
+    wl-clipboard # Clipboard utilities for Wayland
+    wf-recorder # Screen recording for Wayland
+    swaybg # Wallpaper utility for Sway
+    swaylock # Screen locker for Sway
+    swayidle # Idle management daemon for Sway
+    xdg-desktop-portal-wlr # XDG desktop portal for wlroots compositors
+  ];
 }

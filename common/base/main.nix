@@ -2,14 +2,15 @@
 
 {
   imports = [
-    ./compton.nix
-    ./i3.nix
-    ./i3status.nix
+    ./wlsunset.nix
+    ./sway.nix
+    ./waybar.nix
     ./extra.nix
     ./programs.nix
-    ./dunst.nix
+    ./mako.nix
     ./emacs.nix
-    ./xresources.nix
+    ./foot.nix
+    ./wofi.nix
     ./extraPrograms.nix
   ];
 
@@ -19,12 +20,16 @@
   };
 
   fonts.fontconfig.enable = true;
-  xsession.enable = true;
+  
+  # Remove xsession and replace with wayland configuration
+  wayland.enable = true;
+  
   home.pointerCursor = {
     name = "Vanilla-DMZ";
     package = pkgs.vanilla-dmz;
     size = 26;
-    x11.enable = true;
+    gtk.enable = true;
+    wayland.enable = true;
   };
 
   nixpkgs.config.zathura.useMupdf = true;
