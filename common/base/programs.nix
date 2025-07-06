@@ -52,10 +52,6 @@
     zathura = {
       enable = true;
     };
-    # Use swaybg instead of feh
-    swaybg = {
-      enable = true;
-    };
     zed-editor = {
       enable = true;
       extensions = [
@@ -97,5 +93,10 @@
       };
     };
   };
+  
+  # Add swaybg as a home package instead of a program
+  home.packages = with pkgs; [
+    swaybg
+  ];
 }
 

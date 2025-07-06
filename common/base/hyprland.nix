@@ -8,6 +8,7 @@ in
   wayland.windowManager.hyprland = {
     enable = true;
     systemd.enable = true;
+    systemd.variables = ["--all"];
     xwayland.enable = true;
     
     settings = {

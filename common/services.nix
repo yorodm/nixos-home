@@ -11,21 +11,6 @@
     };
   };
 
-  # Enable X server with Wayland support
-  services.xserver = {
-    enable = true;
-    
-    # Enable GDM with Wayland support
-    displayManager = {
-      gdm = {
-        enable = true;
-        wayland = true;
-      };
-      # Set Hyprland as default session
-      defaultSession = "hyprland";
-    };
-  };
-
   # Enable polkit for proper permissions
   security.polkit.enable = true;
 
