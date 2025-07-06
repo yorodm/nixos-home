@@ -15,15 +15,7 @@
         enable = true;
       };
     };
-    rofi = {
-      enable = true;
-      theme = ./files/theme.rasi;
-      extraConfig = {
-        show-icons = true;
-        hide-scrollbar = true;
-      };
-      terminal = "${pkgs.xst}/bin/xst -e ${pkgs.zsh}/bin/zsh";
-    };
+    # Replace rofi with wofi (already configured in wofi.nix)
     direnv = {
       enable = true;
       enableZshIntegration = true;
@@ -51,6 +43,7 @@
     };
     firefox = {
       enable = true;
+      package = pkgs.firefox-wayland;
     };
     mpv = {
       enable = true;
@@ -59,7 +52,8 @@
     zathura = {
       enable = true;
     };
-    feh = {
+    # Use swaybg instead of feh
+    swaybg = {
       enable = true;
     };
     zed-editor = {
@@ -88,5 +82,20 @@
         buffer_font_size = lib.mkForce 16;
       };
     };
+    # Add wl-clipboard for Wayland clipboard support
+    wl-clipboard = {
+      enable = true;
+    };
+    # Add Wayland-specific utilities
+    wlsunset = {
+      enable = true;
+      latitude = "23.1";
+      longitude = "-82.4";
+      temperature = {
+        day = 6500;
+        night = 3500;
+      };
+    };
   };
 }
+
