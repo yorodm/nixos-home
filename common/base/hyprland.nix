@@ -10,23 +10,22 @@ in
     systemd.enable = true;
     systemd.variables = ["--all"];
     xwayland.enable = true;
-    
+
     settings = {
       "$mod" = "SUPER";
-      
+
       # Monitor configuration
       monitor = [
         ",preferred,auto,1"
       ];
-      
+
       # Autostart applications
       exec-once = [
         "${pkgs.waybar}/bin/waybar"
         "${pkgs.swaybg}/bin/swaybg --image ~/wallpapers/wallpaper.png --mode fill"
         "${pkgs.mako}/bin/mako"
-        "${pkgs.wlsunset}/bin/wlsunset"
       ];
-      
+
       # General settings
       general = {
         gaps_in = 5;
@@ -37,7 +36,7 @@ in
         layout = "dwindle";
         allow_tearing = false;
       };
-      
+
       # Decoration settings
       decoration = {
         rounding = 10;
@@ -52,7 +51,7 @@ in
         shadow_render_power = 3;
         "col.shadow" = "rgba(1a1a1aee)";
       };
-      
+
       # Animation settings
       animations = {
         enabled = true;
@@ -65,7 +64,7 @@ in
           "workspaces, 1, 6, default"
         ];
       };
-      
+
       # Input settings
       input = {
         kb_layout = "us, us";
@@ -78,27 +77,27 @@ in
         };
         sensitivity = 0;
       };
-      
+
       # Layout settings
       dwindle = {
         pseudotile = true;
         preserve_split = true;
       };
-      
+
       master = {
         new_is_master = true;
       };
-      
+
       # Gestures
       gestures = {
         workspace_swipe = true;
       };
-      
+
       # Misc settings
       misc = {
         force_default_wallpaper = 0;
       };
-      
+
       # Window rules
       windowrulev2 = [
         "float,class:^(pavucontrol)$"
@@ -106,7 +105,7 @@ in
         "float,class:^(blueman-manager)$"
         "float,title:^(Picture-in-Picture)$"
       ];
-      
+
       # Key bindings
       bind = [
         # Basic bindings
@@ -120,17 +119,17 @@ in
         "$mod, Space, togglefloating,"
         "$mod, P, pseudo,"
         "$mod, J, togglesplit,"
-        
+
         # Lock screen and power management
         "$mod, L, exec, ${pkgs.swaylock}/bin/swaylock -f"
         "$mod, Escape, exec, ${pkgs.systemd}/bin/systemctl suspend"
-        
+
         # Move focus
         "$mod, left, movefocus, l"
         "$mod, right, movefocus, r"
         "$mod, up, movefocus, u"
         "$mod, down, movefocus, d"
-        
+
         # Switch workspaces
         "$mod, 1, workspace, 1"
         "$mod, 2, workspace, 2"
@@ -142,7 +141,7 @@ in
         "$mod, 8, workspace, 8"
         "$mod, 9, workspace, 9"
         "$mod, 0, workspace, 10"
-        
+
         # Move active window to workspace
         "$mod SHIFT, 1, movetoworkspace, 1"
         "$mod SHIFT, 2, movetoworkspace, 2"
@@ -154,12 +153,12 @@ in
         "$mod SHIFT, 8, movetoworkspace, 8"
         "$mod SHIFT, 9, movetoworkspace, 9"
         "$mod SHIFT, 0, movetoworkspace, 10"
-        
+
         # Scroll through workspaces
         "$mod, mouse_down, workspace, e+1"
         "$mod, mouse_up, workspace, e-1"
       ];
-      
+
       # Media keys
       bindel = [
         ", XF86AudioRaiseVolume, exec, amixer set Master 4%+"
@@ -170,14 +169,14 @@ in
         ", XF86KbdBrightnessUp, exec, brightnessctl set 4%+"
         ", XF86KbdBrightnessDown, exec, brightnessctl set 4%-"
       ];
-      
+
       # Move/resize windows with mouse
       bindm = [
         "$mod, mouse:272, movewindow"
         "$mod, mouse:273, resizewindow"
       ];
     };
-    
+
     # Environment variables for Wayland
     extraConfig = ''
       # Environment variables
@@ -191,4 +190,3 @@ in
     '';
   };
 }
-

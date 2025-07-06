@@ -78,12 +78,10 @@
         buffer_font_size = lib.mkForce 16;
       };
     };
-    # Add wl-clipboard for Wayland clipboard support
-    wl-clipboard = {
-      enable = true;
-    };
-    # Add Wayland-specific utilities
-    wlsunset = {
+  };
+
+      # Add Wayland-specific utilities
+  services.wlsunset = {
       enable = true;
       latitude = "23.1";
       longitude = "-82.4";
@@ -92,11 +90,9 @@
         night = 3500;
       };
     };
-  };
-  
+
   # Add swaybg as a home package instead of a program
   home.packages = with pkgs; [
     swaybg
   ];
 }
-
