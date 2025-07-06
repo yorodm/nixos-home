@@ -17,7 +17,7 @@
       AHCI_RUNTIME_PM_ON_AC = "on";
       RUNTIME_PM_ON_AC = "on";
       RUNTIME_PM_ON_BAT = "auto";
-      START_CHARGE_THRESH_BAT0 = 40;
+      START_CHARGE_THRESH_BAT0 = 55;
       STOP_CHARGE_THRESH_BAT0 = 70;
     };
   };
