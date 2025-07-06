@@ -188,5 +188,23 @@
       }
     '';
   };
-}
 
+  # Auto-start waybar with sway
+  systemd.user.services.waybar = {
+    Unit = {
+      Description = "Waybar - Wayland bar for Sway and Wlroots based compositors";
+      PartOf = ["graphical-session.target"];
+      After = ["graphical-session-pre.target"];
+      ConditionEnvironment = ["WAYLAND_DISPLAY"];
+    };
+    Service = {
+      ExecStart = "${pkgs.waybar}/bin/waybar";
+      ExecReload = "${pkgs.coreutils}/bin/kill -SIGUSR2 $MAINPID";
+      Restart = "on-failure";
+      RestartSec = 1;
+    };
+    Install = {
+      WantedBy = ["sway-session.target"];
+    };
+  };
+}

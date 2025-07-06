@@ -11,6 +11,8 @@
     ./emacs.nix
     ./foot.nix
     ./wofi.nix
+    ./swayidle.nix
+    ./swaylock.nix
     ./extraPrograms.nix
   ];
 

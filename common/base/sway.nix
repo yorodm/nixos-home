@@ -8,17 +8,7 @@ in
     enable = true;
     config = rec {
       modifier = "Mod4";
-      bars = [
-        {
-          fonts = {
-            names = [ "DejaVu Sans Mono" "FontAwesome5Free" ];
-            style = "Bold Semi-Condensed";
-            size = 12.0;
-          };
-          position = "top";
-          statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ~/.config/i3status-rust/config-default.toml";
-        }
-      ];
+      bars = [];
       window.border = 15;
       gaps = {
         inner = 5;
@@ -38,6 +28,10 @@ in
         "${modifier}+Shift+d" = "exec ${pkgs.wofi}/bin/wofi --show window";
         "${modifier}+Shift+f" = "exec ${pkgs.foot}/bin/foot ${pkgs.yazi}/bin/yazi";
         "${modifier}+Shift+e" = "exec ${emacsclient}";
+        
+        # Screen locking
+        "${modifier}+l" = "exec ${pkgs.swaylock}/bin/swaylock -f";
+        "${modifier}+Escape" = "exec ${pkgs.systemd}/bin/systemctl suspend";
       };
 
       startup = [
@@ -47,6 +41,10 @@ in
         }
         {
           command = "${pkgs.swaybg}/bin/swaybg --image ~/wallpapers/wallpaper.png --mode fill";
+          always = true;
+        }
+        {
+          command = "${pkgs.waybar}/bin/waybar";
           always = true;
         }
       ];
@@ -84,4 +82,3 @@ in
     '';
   };
 }
-
