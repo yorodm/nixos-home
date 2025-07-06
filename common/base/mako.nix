@@ -2,7 +2,7 @@
 { config, pkgs, ... }:
 
 {
-  programs.mako = {
+  services.mako = {
     enable = true;
     font = "DejaVu Sans Mono 11";
     backgroundColor = "#282828";
@@ -15,7 +15,7 @@
     padding = "15";
     borderSize = 2;
     defaultTimeout = 10000;
-    
+
     # Gruvbox-inspired styling
     extraConfig = ''
       [urgency=low]
@@ -35,4 +35,3 @@
     '';
   };
 }
-

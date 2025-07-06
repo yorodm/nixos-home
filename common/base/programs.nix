@@ -81,13 +81,8 @@
         buffer_font_size = lib.mkForce 16;
       };
     };
-    
-    # Add Wayland-specific utilities
-    wl-clipboard = {
-      enable = true;
-    };
   };
-  
+
   # Add Wayland-specific packages
   home.packages = with pkgs; [
     grim # Screenshot utility for Wayland

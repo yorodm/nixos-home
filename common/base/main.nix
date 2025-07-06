@@ -20,10 +20,7 @@
   };
 
   fonts.fontconfig.enable = true;
-  
-  # Remove xsession and replace with wayland configuration
-  wayland.enable = true;
-  
+
   home.pointerCursor = {
     name = "Vanilla-DMZ";
     package = pkgs.vanilla-dmz;
