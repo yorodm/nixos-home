@@ -28,7 +28,6 @@
     package = pkgs.vanilla-dmz;
     size = 26;
     gtk.enable = true;
-    wayland.enable = true;
   };
 
   nixpkgs.config.zathura.useMupdf = true;
