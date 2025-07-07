@@ -21,6 +21,7 @@ in {
     nerd-fonts.fira-code
     nerd-fonts.droid-sans-mono
     cascadia-code
+    font-awesome  # Added Font Awesome for Waybar icons
     arandr
     tdesktop
     brightnessctl
@@ -76,3 +77,4 @@ in {
   ];
 
 }
+
