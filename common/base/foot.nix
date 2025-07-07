@@ -6,7 +6,7 @@
     enable = true;
     settings = {
       main = {
-        font = "Fira Code Nerd Font Mono:size=12";
+        font = "Fira Code Nerd Font Mono:size=10";  # Reduced font size from 12 to 10
         dpi-aware = "yes";
         pad = "8x8";
         term = "xterm-256color";
@@ -45,4 +45,3 @@
     };
   };
 }
-

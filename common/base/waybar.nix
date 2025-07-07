@@ -125,8 +125,8 @@
       * {
         border: none;
         border-radius: 0;
-        font-family: "DejaVu Sans Mono", "FontAwesome5Free";
-        font-size: 13px;
+        font-family: "DejaVu Sans Mono", "Font Awesome 6 Free", "Font Awesome 6 Brands";
+        font-size: 14px;
         min-height: 0;
       }
 
@@ -206,4 +206,3 @@
     '';
   };
 }
-
