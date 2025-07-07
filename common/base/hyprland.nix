@@ -20,9 +20,8 @@ in
       ];
 
       # Autostart applications
-      exec-once = [
-        "${pkgs.swaybg}/bin/swaybg --image ~/wallpapers/wallpaper.png --mode fill"
-      ];
+      #exec-once = [
+      #];
 
       # General settings
       general = {

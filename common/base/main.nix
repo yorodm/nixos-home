@@ -9,6 +9,7 @@
     ./wofi.nix
     ./hyprlock.nix
     ./hypridle.nix
+    ./hyprpaper.nix
     ./extra.nix
     ./programs.nix
     ./emacs.nix
