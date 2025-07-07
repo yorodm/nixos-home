@@ -29,6 +29,11 @@ in
     defaultApplications = import ./default-apps.nix;
   };
   xdg = {
+    portal = {
+      enable = true;
+      extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
+      xdgOpenUsePortal = true;
+    };
     userDirs = {
       enable = true;
       desktop = "${config.home.homeDirectory}/desktop";

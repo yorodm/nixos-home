@@ -11,6 +11,7 @@
         height = 30;
         modules-left = [ "hyprland/workspaces" "hyprland/window" ];
         modules-right = [
+          "hyprland/language"
           "idle_inhibitor"
           "pulseaudio"
           "network"
@@ -21,6 +22,9 @@
           "tray"
           "clock"
         ];
+        "hyprland/language" = {
+            format = "{}";
+          };
         "idle_inhibitor" = {
           format = "{icon}";
           format-icons = {

@@ -83,8 +83,8 @@
       # Add Wayland-specific utilities
   services.wlsunset = {
       enable = true;
-      latitude = "23.1";
-      longitude = "-82.4";
+      latitude = "42.698334";
+      longitude = "23.319941";
       temperature = {
         day = 6500;
         night = 3500;
