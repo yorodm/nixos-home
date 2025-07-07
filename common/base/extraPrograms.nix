@@ -44,7 +44,6 @@ in {
     zip
     unrar
     unzip
-    escrotum
     tree
     gnupg
     aria2
@@ -74,6 +73,9 @@ in {
     k3d
     nixd
     nil
+    swaybg
+    slurp
+    grim
   ];
 
 }

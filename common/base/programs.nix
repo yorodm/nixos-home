@@ -90,9 +90,4 @@
         night = 3500;
       };
     };
-
-  # Add swaybg as a home package instead of a program
-  home.packages = with pkgs; [
-    swaybg
-  ];
 }
