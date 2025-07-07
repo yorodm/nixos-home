@@ -7,8 +7,8 @@
     ./mako.nix
     ./foot.nix
     ./wofi.nix
-    ./swaylock.nix
-    ./swayidle.nix
+    ./hyprlock.nix
+    ./hypridle.nix
     ./extra.nix
     ./programs.nix
     ./emacs.nix
@@ -21,7 +21,7 @@
   };
 
   fonts.fontconfig.enable = true;
-  
+
   home.pointerCursor = {
     name = "Vanilla-DMZ";
     package = pkgs.vanilla-dmz;
@@ -56,4 +56,3 @@
     XDG_CURRENT_DESKTOP = "Hyprland";
   };
 }
-

@@ -2,6 +2,7 @@
 { config, pkgs, ... }:
 
 {
+  home.packages = [pkgs.libnotify];
   services.mako = {
     enable = true;
     settings = {
@@ -16,26 +17,6 @@
       padding = "15";
       "border-size" = 2;
       "default-timeout" = 10000;
-      
-      # Gruvbox-inspired styling for different urgency levels
-      "[urgency=low]" = {
-        "background-color" = "#282828";
-        "text-color" = "#a89984";
-        "border-color" = "#458588";
-      };
-
-      "[urgency=normal]" = {
-        "background-color" = "#282828";
-        "text-color" = "#ebdbb2";
-        "border-color" = "#689d6a";
-      };
-
-      "[urgency=high]" = {
-        "background-color" = "#282828";
-        "text-color" = "#fb4934";
-        "border-color" = "#cc241d";
-      };
     };
   };
 }
-

@@ -119,7 +119,7 @@ in
         "$mod, J, togglesplit,"
 
         # Lock screen and power management
-        "$mod, L, exec, ${pkgs.swaylock}/bin/swaylock -f"
+        "$mod, L, exec, ${pkgs.hyprlock}/bin/hyprlock"
         "$mod, Escape, exec, ${pkgs.systemd}/bin/systemctl suspend"
 
         # Move focus
