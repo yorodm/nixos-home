@@ -35,19 +35,19 @@ in
       };
 
       # Decoration settings
-      decoration = {
-        rounding = 10;
-        blur = {
-          enabled = true;
-          size = 3;
-          passes = 1;
-          new_optimizations = true;
-        };
-        drop_shadow = true;
-        shadow_range = 4;
-        shadow_render_power = 3;
-        "col.shadow" = "rgba(1a1a1aee)";
-      };
+      # decoration = {
+      #   rounding = 10;
+      #   blur = {
+      #     enabled = true;
+      #     size = 3;
+      #     passes = 1;
+      #     new_optimizations = true;
+      #   };
+      #   drop_shadow = true;
+      #   shadow_range = 4;
+      #   shadow_render_power = 3;
+      #   "col.shadow" = "rgba(1a1a1aee)";
+      # };
 
       # Animation settings
       animations = {
@@ -81,9 +81,9 @@ in
         preserve_split = true;
       };
 
-      master = {
-        new_is_master = true;
-      };
+      # master = {
+      #   new_is_master = true;
+      # };
 
       # Gestures
       gestures = {
