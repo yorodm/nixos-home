@@ -21,6 +21,7 @@ in {
     nerd-fonts.fira-code
     nerd-fonts.droid-sans-mono
     cascadia-code
+    font-awesome
     arandr
     tdesktop
     brightnessctl
