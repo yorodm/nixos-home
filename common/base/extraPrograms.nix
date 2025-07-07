@@ -67,7 +67,6 @@ in {
     # input-leap
     # Fonts
     emacs-all-the-icons-fonts
-    webcord
     clinfo
     kubectl
     k3d
@@ -76,6 +75,7 @@ in {
     swaybg
     slurp
     grim
+    imv
   ];
 
 }
