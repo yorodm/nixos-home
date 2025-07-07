@@ -21,9 +21,7 @@ in
 
       # Autostart applications
       exec-once = [
-        "${pkgs.waybar}/bin/waybar"
         "${pkgs.swaybg}/bin/swaybg --image ~/wallpapers/wallpaper.png --mode fill"
-        "${pkgs.mako}/bin/mako"
       ];
 
       # General settings
