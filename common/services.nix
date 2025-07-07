@@ -11,6 +11,7 @@
     };
   };
 
+  security.pam.services.hyprlock = {};
   # Enable polkit for proper permissions
   security.polkit.enable = true;
 
@@ -35,14 +36,14 @@
 
   # Enable virtualization
   virtualisation.docker.enable = true;
-  
+
   # Enable various system services
   services.udisks2.enable = true;
   services.openssh.enable = true;
   services.upower.enable = true;
   services.fwupd.enable = true;
   services.fstrim.enable = true;
-  
+
   # Audio configuration
   services.pipewire = {
     enable = true;
@@ -61,7 +62,7 @@
 
   # Bluetooth
   services.blueman.enable = true;
-  
+
   # DNS configuration
   networking.networkmanager.dns = "none";
   networking.nameservers = ["127.0.0.1" "::1"];
@@ -89,4 +90,3 @@
     };
   };
 }
-
