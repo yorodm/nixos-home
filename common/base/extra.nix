@@ -16,21 +16,6 @@ in
     poweralertd = {
       enable = true;
     };
-    xidlehook = {
-      enable = true;
-      not-when-fullscreen = true;
-      timers = [
-        {
-          delay = 60 * 15;
-          command = "${pkgs.betterlockscreen}/bin/betterlockscreen --lock";
-        }
-        {
-          delay = 60 * 30;
-          command = "systemctl suspend";
-        }
-      ];
-
-    };
     udiskie = {
       enable = true;
     };
