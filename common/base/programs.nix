@@ -15,15 +15,7 @@
         enable = true;
       };
     };
-    rofi = {
-      enable = true;
-      theme = ./files/theme.rasi;
-      extraConfig = {
-        show-icons = true;
-        hide-scrollbar = true;
-      };
-      terminal = "${pkgs.xst}/bin/xst -e ${pkgs.zsh}/bin/zsh";
-    };
+    # Replace rofi with wofi (already configured in wofi.nix)
     direnv = {
       enable = true;
       enableZshIntegration = true;
@@ -51,15 +43,13 @@
     };
     firefox = {
       enable = true;
+      package = pkgs.firefox-wayland;
     };
     mpv = {
       enable = true;
     };
     # In main.nix theres an entry for the engine to use
     zathura = {
-      enable = true;
-    };
-    feh = {
       enable = true;
     };
     zed-editor = {
@@ -89,4 +79,20 @@
       };
     };
   };
+
+      # Add Wayland-specific utilities
+  services.wlsunset = {
+      enable = true;
+      latitude = "23.1";
+      longitude = "-82.4";
+      temperature = {
+        day = 6500;
+        night = 3500;
+      };
+    };
+
+  # Add swaybg as a home package instead of a program
+  home.packages = with pkgs; [
+    swaybg
+  ];
 }

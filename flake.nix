@@ -60,7 +60,7 @@
       # By default, NixOS will try to refer the nixosConfiguration with
       # its hostname, so the system named `nixos-test` will use this one.
       # However, the configuration name can also be specified using:
-      #   sudo nixos-rebuild switch --flake /path/to/flakes/directory#<name>
+      #   sudo nixos-rebuild switch --flake /path/to/flakes/directory#<n>
       #
       # The `nixpkgs.lib.nixosSystem` function is used to build this
       # configuration, the following attribute set is its parameter.
@@ -82,6 +82,7 @@
             };
           }
           ./common/services.nix
+          ./common/greetd.nix  # Add greetd configuration
 	        home-manager.nixosModules.home-manager  {
             # home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
@@ -103,6 +104,7 @@
             };
           }
           ./common/services.nix
+          ./common/greetd.nix  # Add greetd configuration
 	        home-manager.nixosModules.home-manager  {
             # home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
@@ -113,3 +115,4 @@
     };
   };
 }
+

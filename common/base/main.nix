@@ -2,14 +2,16 @@
 
 {
   imports = [
-    ./compton.nix
-    ./i3.nix
-    ./i3status.nix
+    ./hyprland.nix
+    ./waybar.nix
+    ./mako.nix
+    ./foot.nix
+    ./wofi.nix
+    ./swaylock.nix
+    ./swayidle.nix
     ./extra.nix
     ./programs.nix
-    ./dunst.nix
     ./emacs.nix
-    ./xresources.nix
     ./extraPrograms.nix
   ];
 
@@ -19,11 +21,12 @@
   };
 
   fonts.fontconfig.enable = true;
-  xsession.enable = true;
+  
   home.pointerCursor = {
     name = "Vanilla-DMZ";
     package = pkgs.vanilla-dmz;
     size = 26;
+    gtk.enable = true;
     x11.enable = true;
   };
 
@@ -42,4 +45,15 @@
     ];
   };
 
+  # Wayland-specific environment variables
+  home.sessionVariables = {
+    SDL_VIDEODRIVER = "wayland";
+    QT_QPA_PLATFORM = "wayland";
+    QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
+    _JAVA_AWT_WM_NONREPARENTING = "1";
+    MOZ_ENABLE_WAYLAND = "1";
+    XDG_SESSION_TYPE = "wayland";
+    XDG_CURRENT_DESKTOP = "Hyprland";
+  };
 }
+

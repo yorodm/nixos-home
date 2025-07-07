@@ -1,42 +1,28 @@
 { lib, config, pkgs, ... }:
 
 {
-
-  services.libinput.enable = true;
-# Enable the X11 windowing system.
-  # services.xserver.enable = true;
-  services.xserver.enable = true;
-  # services.xserver.displayManager.lightdm.greeter.enable = true;
-  services.xserver.windowManager.session = lib.singleton {
-    name = "xsession";
-    start = pkgs.writeScript "xsession" ''
-      #!${pkgs.runtimeShell}
-        if test -f $HOME/.xsession; then
-          exec ${pkgs.runtimeShell} -c $HOME/.xsession
-        else
-          echo "No xsession script found"
-          exit 1
-        fi
-    '';
+  # Input device configuration
+  services.libinput = {
+    enable = true;
+    touchpad = {
+      naturalScrolling = true;
+      tapping = true;
+      disableWhileTyping = true;
+    };
   };
-  # Configure keymap in X11
+
+  # Enable polkit for proper permissions
+  security.polkit.enable = true;
+
+  # Configure keymap
   nixpkgs.config.allowUnfree = true;
   services.xserver.xkb.layout = "us";
   services.xserver.xkb.options = "grp:shift_caps_toggle";
 
-
-
-  # Configure keymap in X11
-  # services.xserver.xkb.layout = "us";
-  # services.xserver.xkb.options = "eurosign:e,caps:escape";
-
-  # Enable CUPS to print documents.
+  # Enable CUPS to print documents
   services.printing.enable = true;
 
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.libinput.enable = true;
-
+  # Power management
   services.logind = {
     lidSwitch = "suspend-then-hibernate";
     extraConfig = ''
@@ -47,32 +33,36 @@
     '';
   };
 
+  # Enable virtualization
   virtualisation.docker.enable = true;
+  
+  # Enable various system services
   services.udisks2.enable = true;
-  # Enable the OpenSSH daemon.
   services.openssh.enable = true;
-  # power daemon and firmware
   services.upower.enable = true;
   services.fwupd.enable = true;
   services.fstrim.enable = true;
+  
+  # Audio configuration
   services.pipewire = {
     enable = true;
     alsa.enable = true;
-    # No idea if I need this
     alsa.support32Bit = true;
     pulse.enable = true;
     jack.enable = true;
   };
   systemd.user.services.pipewire-pulse.path = [ pkgs.pulseaudio ];
 
+  # Networking
   services.tailscale = {
     enable = true;
     useRoutingFeatures = "both";
   };
 
-  # Blueman
+  # Bluetooth
   services.blueman.enable = true;
-  # Stubby DNS
+  
+  # DNS configuration
   networking.networkmanager.dns = "none";
   networking.nameservers = ["127.0.0.1" "::1"];
   services.stubby = {
@@ -99,3 +89,4 @@
     };
   };
 }
+
