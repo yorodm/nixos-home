@@ -106,12 +106,12 @@ in
       # Key bindings
       bind = [
         # Basic bindings
-        "$mod, Return, exec, ${pkgs.ghostty}/bin/ghostty ${pkgs.fish}/bin/fish"
+        "$mod, Return, exec, ${pkgs.ghostty}/bin/ghostty -e ${pkgs.fish}/bin/fish"
         "$mod, Q, killactive,"
         "$mod, M, exit,"
         "$mod, E, exec, ${pkgs.wofi}/bin/wofi --show drun"
         "$mod SHIFT, E, exec, ${emacsclient}"
-        "$mod SHIFT, F, exec, ${pkgs.ghostty}/bin/ghostty ${pkgs.yazi}/bin/yazi"
+        "$mod SHIFT, F, exec, ${pkgs.ghostty}/bin/ghostty -e ${pkgs.yazi}/bin/yazi"
         "$mod SHIFT, D, exec, ${pkgs.wofi}/bin/wofi --show window"
         "$mod, Space, togglefloating,"
         "$mod, P, pseudo,"
