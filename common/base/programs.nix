@@ -20,11 +20,6 @@
         enable = true;
       };
     };
-    # Replace rofi with wofi (already configured in wofi.nix)
-    ghostty = {
-      enable = true;
-      enableFishIntegration = true;
-    };
     fish = {
       enable = true;
     };
