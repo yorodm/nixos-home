@@ -106,7 +106,7 @@ in
       # Key bindings
       bind = [
         # Basic bindings
-        "$mod, Return, exec, ${pkgs.foot}/bin/foot ${pkgs.zsh}/bin/zsh"
+        "$mod, Return, exec, ${pkgs.foot}/bin/foot ${pkgs.fish}/bin/fish"
         "$mod, Q, killactive,"
         "$mod, M, exit,"
         "$mod, E, exec, ${pkgs.wofi}/bin/wofi --show drun"
