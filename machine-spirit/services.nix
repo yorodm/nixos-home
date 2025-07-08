@@ -1,10 +1,17 @@
-{lib, pkgs, ...}:
+{ lib, pkgs, ... }:
+
 {
 
-  services.ollama  = {
+  # Stay Up Always
+  systemd.targets.sleep.enable = false;
+  systemd.targets.suspend.enable = false;
+  systemd.targets.hibernate.enable = false;
+  systemd.targets.hybrid-sleep.enable = false;
+
+  services.ollama = {
     enable = true;
     acceleration = false;
-    loadModels = ["qwen2.5-coder:1.5b"];
+    loadModels = [ "qwen2.5-coder:1.5b" ];
   };
 
   services.open-webui = {
