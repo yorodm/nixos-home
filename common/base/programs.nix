@@ -1,7 +1,16 @@
-{ config, pkgs, lib,  ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   programs = {
+    zellij = {
+      enable = true;
+      enableZshIntegration = true;
+    };
     git = {
       enable = true;
       userName = "Yoandy Rodriguez";
@@ -79,15 +88,4 @@
       };
     };
   };
-
-      # Add Wayland-specific utilities
-  services.wlsunset = {
-      enable = true;
-      latitude = "42.698334";
-      longitude = "23.319941";
-      temperature = {
-        day = 6500;
-        night = 3500;
-      };
-    };
 }

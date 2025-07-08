@@ -13,6 +13,16 @@ in
 {
   services = {
 
+    wlsunset = {
+      enable = true;
+      latitude = "42.698334";
+      longitude = "23.319941";
+      temperature = {
+        day = 6500;
+        night = 3500;
+      };
+    };
+
     poweralertd = {
       enable = true;
     };
