@@ -23,17 +23,6 @@
   # Enable CUPS to print documents
   services.printing.enable = true;
 
-  # Power management
-  services.logind = {
-    lidSwitch = "suspend-then-hibernate";
-    extraConfig = ''
-      HandlePowerKey=suspend-then-hibernate
-      IdleAction=suspend-then-hibernate
-      IdleActionSec=10m
-      HibernateDelaySec=2h
-    '';
-  };
-
   # Enable virtualization
   virtualisation.docker.enable = true;
 

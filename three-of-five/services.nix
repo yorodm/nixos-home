@@ -2,6 +2,17 @@
 
 {
 
+  # Power management
+  services.logind = {
+    lidSwitch = "suspend-then-hibernate";
+    extraConfig = ''
+      HandlePowerKey=suspend-then-hibernate
+      IdleAction=suspend-then-hibernate
+      IdleActionSec=10m
+      HibernateDelaySec=2h
+    '';
+  };
+
   services.blueman = {
     enable = true;
   };
