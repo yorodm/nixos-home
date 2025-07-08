@@ -5,7 +5,6 @@
     ./hyprland.nix
     ./waybar.nix
     ./mako.nix
-    ./foot.nix
     ./wofi.nix
     ./hyprlock.nix
     ./hypridle.nix
