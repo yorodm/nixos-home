@@ -63,6 +63,8 @@
   # Bluetooth
   services.blueman.enable = true;
 
+  services.journald.extraConfig = "SystemMaxUse=60M";
+
   # DNS configuration
   networking.networkmanager.dns = "none";
   networking.nameservers = ["127.0.0.1" "::1"];
