@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   imports = [
@@ -18,7 +23,11 @@
 
   programs = {
     home-manager.enable = true;
-    command-not-found.enable = true;
+    nix-index = {
+      enable = true;
+      enableFishIntegration = true;
+    };
+    command-not-found.enable = false;
   };
 
   fonts.fontconfig.enable = true;
