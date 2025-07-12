@@ -7,37 +7,7 @@
 
 {
   programs = {
-    git = {
-      enable = true;
-      userName = "Yoandy Rodriguez";
-      userEmail = "yoandy.rmartinez" + "@" + "gmail.com";
-      extraConfig.credential.helper = "store";
-      delta.enable = true;
-    };
-    gh = {
-      enable = true;
-      gitCredentialHelper = {
-        enable = true;
-      };
-    };
-    fish = {
-      enable = true;
-    };
-    direnv = {
-      enable = true;
-      nix-direnv.enable = true;
-    };
-    firefox = {
-      enable = true;
-      package = pkgs.firefox-wayland;
-    };
-    mpv = {
-      enable = true;
-    };
-    # In main.nix theres an entry for the engine to use
-    zathura = {
-      enable = true;
-    };
+    # Development
     zed-editor = {
       enable = true;
       extensions = [
@@ -63,6 +33,43 @@
         ui_font_size = lib.mkForce 16;
         buffer_font_size = lib.mkForce 16;
       };
+    };
+    git = {
+      enable = true;
+      userName = "Yoandy Rodriguez";
+      userEmail = "yoandy.rmartinez" + "@" + "gmail.com";
+      extraConfig.credential.helper = "store";
+      delta.enable = true;
+    };
+    gh = {
+      enable = true;
+      gitCredentialHelper = {
+        enable = true;
+      };
+    };
+    direnv = {
+      enable = true;
+      nix-direnv.enable = true;
+    };
+    # Shell
+    fish = {
+      enable = true;
+    };
+    keychain = {
+      enable =true;
+      enableFishIntegration = true;
+    };
+    # Utils
+    firefox = {
+      enable = true;
+      package = pkgs.firefox-wayland;
+    };
+    mpv = {
+      enable = true;
+    };
+    # In main.nix theres an entry for the engine to use
+    zathura = {
+      enable = true;
     };
   };
 }

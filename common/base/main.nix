@@ -18,15 +18,13 @@
     ./extra.nix
     ./programs.nix
     ./emacs.nix
+    ./starship.nix
     ./extraPrograms.nix
   ];
 
   programs = {
     home-manager.enable = true;
-    nix-index = {
-      enable = true;
-      enableFishIntegration = true;
-    };
+    nix-index.enable = false;
     command-not-found.enable = false;
   };
 

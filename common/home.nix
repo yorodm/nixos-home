@@ -5,7 +5,10 @@
   # paths it should manage.
   home.username = "jadex";
   home.homeDirectory = "/home/jadex";
-
+  home.shell = {
+    enableFishIntegration = true; # Interactive
+    enableBashIntegration = true; # For TRAMP purposes
+  };
   # imports
   imports = [
 	#./overlay/main.nix
