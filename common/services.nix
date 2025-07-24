@@ -1,6 +1,11 @@
 { lib, config, pkgs, ... }:
 
 {
+  # Environment variables
+  environment.variables = {
+    DO_NOT_TRACK = 1;
+  };
+
   # Input device configuration
   services.libinput = {
     enable = true;

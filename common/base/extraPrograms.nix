@@ -53,8 +53,8 @@ in {
     bat
     fd
     yazi
-    julia-lts
     devpod
+    devbox
     # DEFAULT
     pavucontrol
     # Fonts
