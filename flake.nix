@@ -42,6 +42,8 @@
      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.93.2-1.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    fps.url = "github:wamserma/flake-programs-sqlite";
+    fps.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   # `outputs` are all the build result of the flake.
@@ -54,7 +56,7 @@
   #
   # The `@` syntax here is used to alias the attribute set of the
   # inputs's parameter, making it convenient to use inside the function.
-  outputs = { self, nixpkgs, disko, home-manager, lix-module,... } @inputs: {
+  outputs = { self, nixpkgs, disko, home-manager, lix-module,fps, ... } @inputs: {
 
     nixosConfigurations = {
       # By default, NixOS will try to refer the nixosConfiguration with
@@ -83,6 +85,7 @@
           }
           ./common/services.nix
           ./common/greetd.nix  # Add greetd configuration
+          fps.nixosModules.programs-sqlite
 	        home-manager.nixosModules.home-manager  {
             # home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
@@ -105,6 +108,7 @@
           }
           ./common/services.nix
           ./common/greetd.nix  # Add greetd configuration
+          fps.nixosModules.programs-sqlite
 	        home-manager.nixosModules.home-manager  {
             # home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;

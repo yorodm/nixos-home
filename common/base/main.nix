@@ -7,6 +7,7 @@
 
 {
   imports = [
+    ./files.nix
     ./hyprland.nix
     ./waybar.nix
     ./mako.nix
@@ -15,7 +16,7 @@
     ./hyprlock.nix
     ./hypridle.nix
     ./hyprpaper.nix
-    ./extra.nix
+    ./utils.nix
     ./programs.nix
     ./emacs.nix
     ./starship.nix

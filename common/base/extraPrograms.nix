@@ -28,11 +28,10 @@ in {
     xsct
     xorg.xhost
     transmission_4-gtk
-    ungoogled-chromium
+    brave
     gcc
     gdb
     gnumake
-    zathura
     pulseaudio
     # Special
     lm_sensors
@@ -55,16 +54,9 @@ in {
     fd
     yazi
     julia-lts
-    # SYSADMIN
-    #(callPackage ./termius.nix { })
-    # remmina
+    devpod
     # DEFAULT
     pavucontrol
-    # overlay
-    # rofi-power
-    # rofi-bluetooth
-    xst
-    # input-leap
     # Fonts
     emacs-all-the-icons-fonts
     clinfo

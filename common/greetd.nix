@@ -1,6 +1,8 @@
 { config, lib, pkgs, ... }:
 
 {
+  # XDG
+  environment.pathsToLink = [ "/share/xdg-desktop-portal" "/share/applications" ];
   # Simple greetd configuration for Wayland/Hyprland
   services.greetd = {
     enable = true;
@@ -21,4 +23,3 @@
   # Ensure proper permissions for the greeter
   security.pam.services.greetd.enableGnomeKeyring = true;
 }
-
