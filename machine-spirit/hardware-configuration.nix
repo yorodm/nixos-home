@@ -27,7 +27,7 @@
       "usb_storage"
       "sd_mod"
     ];
-    kernelModules = ["kvm-intel" "wl"];
+    kernelModules = ["kvm-intel"];
     blacklistedKernelModules = [
       "b43"
       "ssb"
@@ -35,7 +35,7 @@
       "brcmsmac"
       "bcma"
     ];
-   extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
+
     kernelParams = [
       "i915.enable_rc6=7"
       "intel_pstate=active"

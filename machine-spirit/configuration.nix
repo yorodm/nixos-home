@@ -20,7 +20,7 @@
   networking.wireless.enable = false;  # Enables wireless support via wpa_supplicant.
   # networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
   networking = {
-    enableB43Firmware = true;
+    # enableB43Firmware = true;
     nameservers = [ "127.0.0.1" "::1" ];
     firewall.allowedTCPPorts = [ 22 6443];
     firewall.enable = true;
