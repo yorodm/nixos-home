@@ -102,7 +102,6 @@ in
         "float,class:^(blueman-manager)$"
         "float,title:^(Picture-in-Picture)$"
       ];
-
       # Key bindings
       bind = [
         # Basic bindings
@@ -112,7 +111,7 @@ in
         "$mod, E, exec, ${pkgs.wofi}/bin/wofi --show drun"
         "$mod SHIFT, E, exec, ${emacsclient}"
         "$mod SHIFT, F, exec, ${pkgs.foot}/bin/foot ${pkgs.yazi}/bin/yazi"
-        "$mod SHIFT, D, exec, ${pkgs.wofi}/bin/wofi --show window"
+        # "$mod SHIFT, D, exec, ${pkgs.wofi}/bin/wofi --show window"
         "$mod, Space, togglefloating,"
         "$mod, P, pseudo,"
         "$mod, J, togglesplit,"
@@ -120,6 +119,9 @@ in
         # Lock screen and power management
         "$mod, L, exec, ${pkgs.hyprlock}/bin/hyprlock"
         "$mod, Escape, exec, ${pkgs.systemd}/bin/systemctl suspend"
+        # Print Screen
+        ", Print, exec, ${pkgs.grimblast}/bin/grimblast save area - | ${pkgs.swappy}/bin/swappy -f -"
+        "SHIFT, Print,exec, ${pkgs.grimblast}/bin/grimblast copy area"
 
         # Move focus
         "$mod, left, movefocus, l"

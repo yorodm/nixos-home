@@ -54,7 +54,6 @@ in {
     fd
     yazi
     devpod
-    devbox
     # DEFAULT
     pavucontrol
     # Fonts
@@ -64,9 +63,7 @@ in {
     k3d
     nixd
     nil
-    swaybg
-    slurp
-    grim
+    wl-clipboard
     imv
   ];
 
