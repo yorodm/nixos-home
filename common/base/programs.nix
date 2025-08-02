@@ -15,6 +15,7 @@
         "catppuccin"
         "catpuccin-icons"
         "elm"
+        "julia"
       ];
       userSettings = {
         icon_theme = "Catppuccin Mocha";
