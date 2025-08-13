@@ -160,9 +160,9 @@ in
 
       # Media keys
       bindel = [
-        ", XF86AudioRaiseVolume, exec, amixer set Master 4%+"
-        ", XF86AudioLowerVolume, exec, amixer set Master 4%-"
-        ", XF86AudioMute, exec, amixer set Master toggle"
+        ", XF86AudioRaiseVolume, exec,${pkgs.pamixer}/bin/pamixer -i 2"
+        ", XF86AudioLowerVolume, exec,  ${pkgs.pamixer}/bin/pamixer -d 2"
+        ", XF86AudioMute, exec, ${pkgs.pamixer}/bin/pamixer -t"
         ", XF86MonBrightnessUp, exec, brightnessctl set 4%+"
         ", XF86MonBrightnessDown, exec, brightnessctl set 4%-"
         ", XF86KbdBrightnessUp, exec, brightnessctl set 4%+"

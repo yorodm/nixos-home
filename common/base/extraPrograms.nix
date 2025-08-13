@@ -33,6 +33,7 @@ in {
     gdb
     gnumake
     pulseaudio
+    tor-browser
     # Special
     lm_sensors
     cachix
