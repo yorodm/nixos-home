@@ -112,7 +112,9 @@
 	        home-manager.nixosModules.home-manager  {
             # home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.jadex = import ./common/home.nix;
+            home-manager.users.jadex = {
+              imports = [./common/home.nix];
+            };
           }
         ];
       };
