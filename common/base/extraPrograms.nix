@@ -38,7 +38,6 @@ in {
     lm_sensors
     cachix
     # TERMINAL
-    ripgrep
     btop
     neofetch
     zip

@@ -51,6 +51,10 @@
     direnv = {
       enable = true;
       nix-direnv.enable = true;
+      enableBashIntegration = true;
+    };
+    ripgrep = {
+      enable = true;
     };
     # Shell
     fish = {
