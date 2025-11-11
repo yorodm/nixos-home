@@ -61,11 +61,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1762728232,
-        "narHash": "sha256-tx5EzHrKy+eXDGl0CG+NqXLVca27g6dePR1Ll8It/30=",
+        "lastModified": 1762754784,
+        "narHash": "sha256-amDmvXi2jzo+2+7qtj3UtpBVgKcMbx6FLXhByFMkqi0=",
         "owner": "wamserma",
         "repo": "flake-programs-sqlite",
-        "rev": "855dd4f834b294647bbb43ea9f381f97eee1dc3b",
+        "rev": "717937dd298ad782c888f129ecf1a14edcf557bb",
         "type": "github"
       },
       "original": {
@@ -123,7 +123,7 @@
         "narHash": "sha256-SXUAlxpjPRkArRMHy5+Hdi+PiC+ND9yzzIjiaHmTvQU=",
         "rev": "8b1094356f4723d6e89d3f8a95b333ee16d9ab02",
         "type": "tarball",
-        "url": "https://git.lix.systems/api/v1/repos/lix-project/nixos-module/archive/8b1094356f4723d6e89d3f8a95b333ee16d9ab02.tar.gz"
+        "url": "https://git.lix.systems/api/v1/repos/lix-project/nixos-module/archive/8b1094356f4723d6e89d3f8a95b333ee16d9ab02.tar.gz?rev=8b1094356f4723d6e89d3f8a95b333ee16d9ab02"
       },
       "original": {
         "type": "tarball",
