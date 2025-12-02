@@ -26,7 +26,8 @@
   programs = {
     home-manager.enable = true;
     nix-index.enable = false;
-    command-not-found.enable = false;
+    nix-index.enableBashIntegration = true;
+    nix-index.enableFishIntegration = true;
   };
 
   fonts.fontconfig.enable = true;

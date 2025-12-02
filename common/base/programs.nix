@@ -37,10 +37,13 @@
     };
     git = {
       enable = true;
-      userName = "Yoandy Rodriguez";
-      userEmail = "yoandy.rmartinez" + "@" + "gmail.com";
-      extraConfig.credential.helper = "store";
-      delta.enable = true;
+      settings.user.name = "Yoandy Rodriguez";
+      settings.user.email = "yoandy.rmartinez" + "@" + "gmail.com";
+      settings.credential.helper = "store";
+    };
+    delta = {
+      enable = true;
+      enableGitIntegration = true;
     };
     gh = {
       enable = true;
@@ -67,7 +70,6 @@
     # Utils
     firefox = {
       enable = true;
-      package = pkgs.firefox-wayland;
     };
     mpv = {
       enable = true;

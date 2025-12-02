@@ -23,7 +23,7 @@ in {
     cascadia-code
     font-awesome
     arandr
-    tdesktop
+    telegram-desktop
     brightnessctl
     xsct
     xorg.xhost

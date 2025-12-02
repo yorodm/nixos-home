@@ -17,7 +17,7 @@
 
   # Add required packages
   environment.systemPackages = with pkgs; [
-    greetd.tuigreet
+    tuigreet
   ];
 
   # Ensure proper permissions for the greeter
