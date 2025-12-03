@@ -11,7 +11,7 @@
   services.ollama = {
     enable = true;
     acceleration = false;
-    loadModels = [ "qwen2.5-coder:1.5b" "B-A-M-N/vibethinker_q8:1.5b"];
+    loadModels = [ "qwen2.5-coder:1.5b"];
   };
 
   services.open-webui = {
