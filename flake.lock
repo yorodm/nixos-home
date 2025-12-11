@@ -81,7 +81,7 @@
         "narHash": "sha256-Oqw04eboDM8rrUgAXiT7w5F2uGrQdt8sGX+Mk6mVXZQ=",
         "rev": "017e93ae637ce6dfc958001e5cdc2a3e0182be6f",
         "type": "tarball",
-        "url": "https://git.lix.systems/api/v1/repos/lix-project/lix/archive/017e93ae637ce6dfc958001e5cdc2a3e0182be6f.tar.gz?rev=017e93ae637ce6dfc958001e5cdc2a3e0182be6f"
+        "url": "https://git.lix.systems/api/v1/repos/lix-project/lix/archive/017e93ae637ce6dfc958001e5cdc2a3e0182be6f.tar.gz"
       },
       "original": {
         "type": "tarball",
@@ -104,7 +104,7 @@
         "narHash": "sha256-6a+PWILmqHCs9B5eIBLg6HSZ8jYweZpgOWO8FlyVwYI=",
         "rev": "d3292125035b04df00d01549a26e948631fabe1e",
         "type": "tarball",
-        "url": "https://git.lix.systems/api/v1/repos/lix-project/nixos-module/archive/d3292125035b04df00d01549a26e948631fabe1e.tar.gz?rev=d3292125035b04df00d01549a26e948631fabe1e"
+        "url": "https://git.lix.systems/api/v1/repos/lix-project/nixos-module/archive/d3292125035b04df00d01549a26e948631fabe1e.tar.gz"
       },
       "original": {
         "type": "tarball",
