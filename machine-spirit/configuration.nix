@@ -2,14 +2,19 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./services.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ./services.nix
+  ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -17,16 +22,34 @@
 
   networking.hostName = "machine-spirit"; # Define your hostname.
   # Pick only one of the below networking options.
-  networking.wireless.enable = false;  # Enables wireless support via wpa_supplicant.
+  networking.wireless.enable = false; # Enables wireless support via wpa_supplicant.
   # networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
   networking = {
     # enableB43Firmware = true;
-    nameservers = [ "127.0.0.1" "::1" ];
-    firewall.allowedTCPPorts = [ 22 6443];
+    nameservers = [
+      "127.0.0.1"
+      "::1"
+    ];
+    firewall.allowedTCPPorts = [
+      22
+      6443
+      8081
+      8083
+      5000
+    ];
+    firewall.allowedTCPPortRanges = [
+      {
+        from = 30000;
+        to = 30050;
+      }
+    ];
     firewall.enable = true;
-    firewall.trustedInterfaces = ["tailscale0"];
+    firewall.trustedInterfaces = [ "tailscale0" ];
     networkmanager = {
-      insertNameservers = [ "127.0.0.1" "::1" ];
+      insertNameservers = [
+        "127.0.0.1"
+        "::1"
+      ];
       enable = true;
       dns = "none";
       wifi.backend = "iwd";
@@ -39,7 +62,7 @@
     verbose = true;
     aggressive = true;
   };
-    # Set your time zone.
+  # Set your time zone.
   time.timeZone = "Europe/Sofia";
 
   # Configure network proxy if necessary
@@ -53,12 +76,18 @@
     useXkbConfig = true; # use xkb.options in tty.
   };
 
-
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.jadex = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "video" "kvm" "audio" "root" "docker"]; # Enable ‘sudo’ for the user.
+    extraGroups = [
+      "wheel"
+      "networkmanager"
+      "video"
+      "kvm"
+      "audio"
+      "root"
+      "docker"
+    ]; # Enable ‘sudo’ for the user.
   };
 
   # programs.firefox.enable = true;

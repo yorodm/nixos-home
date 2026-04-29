@@ -52,6 +52,7 @@
   services.tailscale = {
     enable = true;
     useRoutingFeatures = "both";
+    extraDaemonFlags = ["--no-logs-no-support"];
   };
 
   # Bluetooth
