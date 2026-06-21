@@ -34,20 +34,15 @@
     };
 
     nixos-hardware = {
-	    url = "github:NixOS/nixos-hardware/master";
+      url = "github:NixOS/nixos-hardware/master";
     };
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
-    lix = {
-      url = "https://git.lix.systems/lix-project/lix/archive/2.93.3.tar.gz";
-      flake = false;
-    };
-
-    lix-module = {
-      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.93.3-2.tar.gz";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.lix.follows = "lix";
-    };
+    nixarr.url = "github:nix-media-server/nixarr";
+ #   lix-module = {
+ #     url = "git+https://git.lix.systems/lix-project/nixos-module";
+ #     inputs.nixpkgs.follows = "nixpkgs";
+ #   };
 
   };
 
@@ -61,66 +56,89 @@
   #
   # The `@` syntax here is used to alias the attribute set of the
   # inputs's parameter, making it convenient to use inside the function.
-  outputs = { self, nixpkgs, disko, home-manager, lix-module,... } @inputs: {
+  outputs =
+    {
+      self,
+      nixpkgs,
+      disko,
+      home-manager,
+      nixarr,
+#      lix-module,
+      ...
+    }@inputs:
+    {
 
-    nixosConfigurations = {
-      # By default, NixOS will try to refer the nixosConfiguration with
-      # its hostname, so the system named `nixos-test` will use this one.
-      # However, the configuration name can also be specified using:
-      #   sudo nixos-rebuild switch --flake /path/to/flakes/directory#<n>
-      #
-      # The `nixpkgs.lib.nixosSystem` function is used to build this
-      # configuration, the following attribute set is its parameter.
-      #
-      # Run the following command in the flake's directory to
-      # deploy this configuration on any NixOS system:
-      #   sudo nixos-rebuild switch --flake .#nixos-test
-      "three-of-5" = nixpkgs.lib.nixosSystem{
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
-        modules = [
-          lix-module.nixosModules.default
-          disko.nixosModules.disko
-          ./three-of-five/disk-config.nix
-          ./three-of-five/configuration.nix
-          {
-            nix = {
-              settings.experimental-features = [ "nix-command" "flakes" ];
-            };
-          }
-          ./common/services.nix
-          ./common/greetd.nix  # Add greetd configuration
-	        home-manager.nixosModules.home-manager  {
-            # home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.jadex = import ./common/home.nix;
-          }
-        ];
-      };
-      "machine-spirit" = nixpkgs.lib.nixosSystem{
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
-        modules = [
-          lix-module.nixosModules.default
-          disko.nixosModules.disko
-          ./machine-spirit/disk-config.nix
-          ./machine-spirit/configuration.nix
-          {
-            nix = {
-              settings.experimental-features = [ "nix-command" "flakes" ];
-            };
-          }
-          ./common/services.nix
-          ./common/greetd.nix  # Add greetd configuration
-	        home-manager.nixosModules.home-manager  {
-            # home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.jadex = {
-              imports = [./common/home.nix];
-            };
-          }
-        ];
+      nixosConfigurations = {
+        # By default, NixOS will try to refer the nixosConfiguration with
+        # its hostname, so the system named `nixos-test` will use this one.
+        # However, the configuration name can also be specified using:
+        #   sudo nixos-rebuild switch --flake /path/to/flakes/directory#<n>
+        #
+        # The `nixpkgs.lib.nixosSystem` function is used to build this
+        # configuration, the following attribute set is its parameter.
+        #
+        # Run the following command in the flake's directory to
+        # deploy this configuration on any NixOS system:
+        #   sudo nixos-rebuild switch --flake .#nixos-test
+        "three-of-5" = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = { inherit inputs; };
+          modules = [
+            ({pkgs,...}: {
+              nix.package = pkgs.lix;
+            })
+            disko.nixosModules.disko
+            ./three-of-five/disk-config.nix
+            ./three-of-five/configuration.nix
+            {
+              nix = {
+                settings.experimental-features = [
+                  "nix-command"
+                  "flakes"
+                ];
+              };
+            }
+            ./common/services.nix
+            ./common/greetd.nix # Add greetd configuration
+            home-manager.nixosModules.home-manager
+            {
+              # home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.jadex = import ./common/home.nix;
+            }
+          ];
+        };
+        "machine-spirit" = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = { inherit inputs; };
+          modules = [
+            ({pkgs,...}: {
+              nix.package = pkgs.lix;
+            })
+            nixarr.nixosModules.default
+            disko.nixosModules.disko
+            ./machine-spirit/disk-config.nix
+            ./machine-spirit/configuration.nix
+            {
+              nix = {
+                settings.experimental-features = [
+                  "nix-command"
+                  "flakes"
+                ];
+              };
+            }
+            ./common/services.nix
+            ./common/greetd.nix # Add greetd configuration
+            home-manager.nixosModules.home-manager
+            {
+              # home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.jadex = {
+                imports = [ ./common/home.nix ];
+              };
+            }
+          ];
+        };
       };
     };
-  };
 }

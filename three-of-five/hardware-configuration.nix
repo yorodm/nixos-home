@@ -13,6 +13,9 @@
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
+  boot.kernelPackages = lib.mkIf (lib.versionOlder pkgs.linux.version "6.18.22") (
+    lib.mkDefault pkgs.linuxPackages_6_18
+  );
   boot.initrd.systemd.enable = true;
   boot.initrd.availableKernelModules = [
     "xhci_pci"
@@ -26,6 +29,16 @@
   boot.extraModulePackages = [ ];
   boot.kernelParams = [
     "i915.enable_guc=2"
+  ];
+  boot.extraModprobeConfig = ''
+    install esp4 ${pkgs.coreutils}/bin/false
+    install esp6 ${pkgs.coreutils}/bin/false
+    install rxrpc ${pkgs.coreutils}/bin/false
+  '';
+  boot.blacklistedKernelModules = [
+    "esp4"
+    "esp6"
+    "rxrpc"
   ];
   networking.useDHCP = lib.mkDefault true;
 

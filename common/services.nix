@@ -30,6 +30,7 @@
 
   # Enable virtualization
   virtualisation.docker.enable = true;
+  virtualisation.docker.package = pkgs.docker_29;
 
   # Enable various system services
   services.udisks2.enable = true;
@@ -63,6 +64,12 @@
   # DNS configuration
   networking.networkmanager.dns = "none";
   networking.nameservers = ["127.0.0.1" "::1"];
+  services.avahi = {
+    enable = true;
+    publish.enable = true;
+    publish.userServices = true;
+    openFirewall = true;
+  };
   services.stubby = {
     enable = true;
     settings = pkgs.stubby.passthru.settingsExample // {
