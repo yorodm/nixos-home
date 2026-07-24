@@ -59,7 +59,11 @@
   # Bluetooth
   services.blueman.enable = true;
 
-  services.journald.extraConfig = "SystemMaxUse=60M";
+  services.journald.extraConfig = ''
+    SystemMaxUse=10G
+    SystemMaxFileSize=100M
+    MaxFileSec=2week
+  '';
 
   # DNS configuration
   networking.networkmanager.dns = "none";

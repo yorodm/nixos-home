@@ -39,7 +39,7 @@ in {
     cachix
     # TERMINAL
     btop
-    neofetch
+    zigfetch
     zip
     unrar
     unzip
