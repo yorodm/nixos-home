@@ -23,6 +23,8 @@
 
     # Official NixOS package source, using nixos-23.11 branch here
     nixpkgs.url = "nixpkgs/nixos-26.05";
+    # Hister
+    hister.url = "github:asciimoo/hister";
     # home-manager, used for managing user configuration
     home-manager = {
       url = "github:nix-community/home-manager/release-26.05";
@@ -62,7 +64,7 @@
       nixpkgs,
       disko,
       home-manager,
-      nixarr,
+      hister,
 #      lix-module,
       ...
     }@inputs:
@@ -115,8 +117,9 @@
             ({pkgs,...}: {
               nix.package = pkgs.lix;
             })
-            nixarr.nixosModules.default
             disko.nixosModules.disko
+            hister.nixosModules.hister
+
             ./machine-spirit/disk-config.nix
             ./machine-spirit/configuration.nix
             {

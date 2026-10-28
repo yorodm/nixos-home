@@ -32,10 +32,11 @@
     ];
     firewall.allowedTCPPorts = [
       22
-      6443
-      8081
-      8083
+      6443 # k3d
+      8081 # k3d
+      8083 # k3d
       5000
+      4433
     ];
     firewall.allowedTCPPortRanges = [
       {

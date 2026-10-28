@@ -23,4 +23,17 @@
       fi
     '';
   };
+
+  services.hister = {
+    enable = true;
+    dataDir = "/var/lib/hister";
+     settings = {
+       server = {
+          address = "192.168.1.170:4433";
+       };
+       app = {
+         log_level = "info";
+       };
+     };
+  };
 }
